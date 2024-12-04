@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    /* 去除移动端点击高亮样式 */
+    -webkit-tap-highlight-color: transparent;
+}
+  
+:root {
+    background-color: var(--color-bg);
+  
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Inter, Avenir, system-ui, Helvetica, Arial, sans-serif;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-width: 300px;
+    color: var(--color-text-1);
+}
+
+a {
+    color: #117CEE;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #116fd4;
+}
+  
+ul,ol {
+    list-style: none;
+}
+
+img {
+    object-fit: cover;
+}
+
+img[src=""] {
+    opacity: 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="color"] {
+    border: 2px solid var(--color-bg-3);
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: 0;
+}
+
+
+
+
+/* 更改 NProgress 进度条样式 */
+#nprogress {
+    position: absolute;
+    z-index: 1000;
+}
+#nprogress .bar {
+    background: var(--color-theme);
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px var(--color-theme), 0 0 5px var(--color-theme);
+}

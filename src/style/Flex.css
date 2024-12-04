@@ -1,0 +1,60 @@
+
+/* 横向排列-上下居中 */
+.flex-x {
+	display: flex;
+	align-items: center;
+}
+/* 横向排列-中心对齐 */
+.flex-x-y {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* 横向排列-两端对齐 */
+.flex-x-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+/* 垂直排列-顶部对齐 */
+.flex-y {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+/* 垂直排列-居中 */
+.flex-y-x {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+/* 垂直排列-左对齐 */
+.flex-y-left {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+/* 垂直排列-右对齐 */
+.flex-y-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+/* 垂直排列-左右居中 */
+.flex-x-y-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/* 垂直排列-上下对齐 */
+.flex-y-between {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}

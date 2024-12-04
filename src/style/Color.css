@@ -1,0 +1,29 @@
+:root {
+    /* 主题色 */
+    --color-theme: #00B7ED;
+    --color-theme-h: #00A1F2;
+    --color-theme-a: #006EA6;
+    /* 背景色 */
+    --color-bg: #121518;
+    --color-bg-2: #1C2226;
+    --color-bg-3: #242b30;
+    --color-bg-4: #2E353D;
+    /* 文本颜色 */
+    --color-text-1: #FAFAFA;
+    --color-text-2: #DEE0E5;
+    --color-text-3: #7D8494;
+    --color-text-4: #5b606b;
+    --color-text-5: #3d4148;
+    /* 标准颜色 */
+    --color-light: #FFFFFF;
+    --color-dark: #010101;
+    /* 边框颜色 */
+    --color-border: #343841;
+    /* 鼠标滑过颜色 */
+    --color-hover: #3D4955;
+    /* 不同级别颜色 */
+    --color-primary: #337aff;
+    --color-success: #44c26a;
+    --color-warning: #ff952c;
+    --color-danger: #ff5757;
+}
