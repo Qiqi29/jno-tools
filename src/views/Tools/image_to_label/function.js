@@ -301,7 +301,8 @@ export function imageToCode() {
             resultCode += ` `
         }
     }
-    return resultCode
+    // 返回最终代码，去除结尾的空格
+    return resultCode.trimEnd()
 }
 
 // 辅助函数：获取当前颜色对应的颜色ID

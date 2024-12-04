@@ -53,7 +53,7 @@ const clickColorButton = (direction) => {
 
 // 获取当前选中的颜色值
 let colorValue = computed(() => {
-    return labelStore.colorList[labelStore.activeColor].color.toUpperCase()
+    return labelStore.colorList[labelStore.activeColor]?.color.toUpperCase()
 })
 
 
