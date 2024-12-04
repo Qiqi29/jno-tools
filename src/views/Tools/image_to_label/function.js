@@ -189,8 +189,13 @@ function setColorList(imageColors) {
  * @param {*} data      图像数据
  */
 function paintBucket(x, y, newColor, canvas, data) {
-    // 获取触摸点的颜色
+    // 获取指定坐标颜色
     const targetColor = getPixelColor(x, y, canvas, data)
+    // 如果颜色是透明色，不执行
+    if (targetColor[3] === 0) {
+        return
+    }
+
     // 创建一个栈，存储需要处理的像素坐标
     const stack = [[x, y]]
     let currentPixel
