@@ -291,14 +291,14 @@ export function imageToCode() {
             }
         }
 
-        if (a === 0) {
-            resultCode += ` `
-        } else {
-            resultCode += `.`
-        }
-        
         if ((i / 4) % imageCanvas.width === 0) {
             resultCode += `<br>`
+        }
+
+        if (a === 255) {
+            resultCode += `.`
+        } else {
+            resultCode += ` `
         }
     }
     return resultCode
