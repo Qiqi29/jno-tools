@@ -58,10 +58,10 @@ const routes = [
 ]
 
 const router = createRouter({
-    // history: createWebHashHistory(),  // hash 模式
-    history: createWebHistory(),         // history 模式
+    history: createWebHashHistory(),  // hash 模式（在Github中需要使用此模式）
+    // history: createWebHistory(),         // history 模式
     routes,
-    base: '/jno-tools-web/',             // 基本地址
+    // base: '/jno-tools-web/',             // 基本地址
     // 每次切换路由强制滚动到顶部
     scrollBehavior: () => ({ left: 0, top: 0 })
 })
