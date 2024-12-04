@@ -20,15 +20,6 @@ const imageUrl = computed(() => {
             <img v-if="imageUrl" :src="imageUrl" alt="">            
         </div>
 
-        <!-- <div class="color_list">
-            <div class="color_item" 
-                v-for="(item, index) in labelStore.imageColors" 
-                :key="index"
-                :style="`background: ${rgbToHex(item)}`"
-                >
-            </div>
-        </div> -->
-
     </div>
 </template>
 

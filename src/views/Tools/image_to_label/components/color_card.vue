@@ -90,6 +90,7 @@ const buttonHelp = () => {
         
         <p class="popup_title">小提示</p>
         <p class="popup_text">推荐使用清晰、对比度高、颜色较少的图像进行转换。</p>
+        <p class="popup_text">粘贴代码后，如果图像异常，把 FontSize、Width、Height 属性都拉到最大，然后再缩小到合适的大小</p>
     `
     showPopup("使用方法", content)
 }

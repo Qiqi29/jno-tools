@@ -249,7 +249,7 @@ function matchColor(color1, color2) {
 
 /*
 
-<mspace=0.5><line-height=0.5><size=1.6>
+<mspace=0.2><line-height=0.2><size=0.65>
 <#040404><space=0.5>..<space=0.5><br>....<br>
 <#010101>..<space=1>..<br>....
 
@@ -260,7 +260,7 @@ export function imageToCode() {
     const imageCanvas = labelStore.newImageData
     if (imageCanvas == null) return
 
-    let resultCode = `<mspace=0.5><line-height=0.5><size=1.6>`
+    let resultCode = `<mspace=0.2><line-height=0.2><size=0.65>`
 
     // 把像素数据转换为文本数据
     const ctx = imageCanvas.getContext('2d', { willReadFrequently: true })

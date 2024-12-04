@@ -55,8 +55,7 @@ const handleItemChange = () => {
             </div>
 
             <div class="card_tips">
-                <p>越宽越清晰，转换后的数据也越大。Lable 零件有字符数量限制，大概在 20000 字符之内。
-                </p>
+                <p>越宽越清晰，转换后的数据也越大。Label 零件有字符数量限制，推荐正方形图像宽度在200以内。</p>
             </div>
 
             <div class="setting_item">
