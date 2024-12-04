@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { imageToCode } from '../function'
 
 import iconView from '@/components/Icon.vue'
@@ -49,6 +49,12 @@ const clickColorButton = (direction) => {
         }
     }
 }
+
+
+// 获取当前选中的颜色值
+let colorValue = computed(() => {
+    return labelStore.colorList[labelStore.activeColor].color.toUpperCase()
+})
 
 
 // 点击复制代码按钮
@@ -115,6 +121,10 @@ const buttonHelp = () => {
 
         <div class="card_content">
 
+            <div class="color_hex_text flex-x-y">
+                <span>{{ colorValue }}</span>
+            </div>
+
             <div class="edit_buttons">
                 <buttonView type="default" icon="left" @click="clickColorButton(0)"/>
                 <buttonView type="default" icon="right" @click="clickColorButton(1)"/>
@@ -171,6 +181,16 @@ const buttonHelp = () => {
                 }
             }
         }
+    }
+
+    .color_hex_text {
+        width: 100%;
+        height: 36px;
+        border-radius: 4px;
+        background: var(--color-bg-3);
+        color: var(--color-text-3);
+        font-weight: bold;
+        font-size: 16px;
     }
 
     .edit_buttons {
