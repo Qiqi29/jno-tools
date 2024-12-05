@@ -12,7 +12,7 @@ export default {
         title_name: 'Gadget',
     },
     tools: {
-        ImageToLabel: 'Imagr To Label',
+        ImageToLabel: 'Image To Label',
         empty: 'To be made',
     },
     imageToLabel: {
@@ -49,5 +49,9 @@ export default {
     footer: {
         text1: 'Released under the MIT License.',
         text2: 'Copyright © 2024-present 琦琦',
+    },
+    error: {
+        text1: 'Drood',
+        text2: ' took the page to space!',
     }
 }

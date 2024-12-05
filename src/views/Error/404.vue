@@ -7,7 +7,7 @@
 
         <p class="title">404</p>
 
-        <p class="text"><span>小蓝</span>带着页面上太空啦！🚀</p>
+        <p class="text"><span>{{ $t('error.text1') }}</span>{{ $t('error.text2') }}🚀</p>
 
         <router-link to="/" class="back_button flex-x-y">
             <svg class="icon" width="2em" height="2em"><use xlink:href="#icon-boom"></use></svg>

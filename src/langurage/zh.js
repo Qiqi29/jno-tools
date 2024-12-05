@@ -49,5 +49,9 @@ export default {
     footer: {
         text1: '根据 MIT 许可证发布',
         text2: '版权所有 © 2024-至今 琦琦',
+    },
+    error: {
+        text1: '小蓝',
+        text2: '带着页面上太空啦！',
     }
 }
