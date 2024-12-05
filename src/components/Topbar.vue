@@ -5,11 +5,10 @@ const { locale } = useI18n()
 
 import iconView from './Icon.vue'
 
-import conf from '/src/App.config'
 const props = defineProps({
     title: {
         type: String,
-        default: conf.web.title,
+        default: "",
     },
 })
 

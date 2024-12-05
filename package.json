@@ -1,7 +1,12 @@
 {
     "name": "jno-tools",
-    "private": true,
-    "version": "0.0.0",
+    "description": "一个 Vue3 组件库",
+    "version": "0.0.1",
+    "author": {
+        "name": "qiqi29",
+        "email": "sgq457@qq.com"
+    },
+    "private": false,
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -20,5 +25,6 @@
     "devDependencies": {
         "@vitejs/plugin-vue": "^5.2.1",
         "vite": "^6.0.1"
-    }
+    },
+    "license": "MIT"
 }

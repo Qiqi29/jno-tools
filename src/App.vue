@@ -3,7 +3,8 @@
 </script>
 
 <template>
-    <!-- 根路由组件 -->
+    
+    <!-- 根路由 -->
     <router-view></router-view>
 
 </template>
