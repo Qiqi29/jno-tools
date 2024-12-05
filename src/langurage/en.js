@@ -42,13 +42,31 @@ export default {
             btn_help: 'How to use',
         },
     },
+    footer: {
+        text1: 'Released under the MIT License.',
+        text2: 'Copyright © 2024-present 琦琦',
+    },
     toast: {
         copy: 'Code copied successfully',
         copy_err: 'Copy failed, please copy manually',
     },
-    footer: {
-        text1: 'Released under the MIT License.',
-        text2: 'Copyright © 2024-present 琦琦',
+    popup: {
+        howToUse_title: 'How to use',
+        howToUse_content: `<p class="popup_title">1. Paste code</p>
+        <p class="popup_text">Paste the copied code into the text box of the Lable part.</p>
+
+        <p class="popup_title">2. Set the properties of the Label part</p>
+        <p class="popup_text">(Font) Set to Future Earth.</p>
+        <p class="popup_text">(Horizontal Anchor) Set to Left.</p>
+        <p class="popup_text">(Vertical Anchor) Set to Top.</p>
+        <p class="popup_text">(Gradient) Set to Vertical.</p>
+        
+        <p class="popup_title">3. Resize image</p>
+        <p class="popup_text">Resize the image by Part Scale in the TINKER PANEL option.</p>
+        
+        <p class="popup_title">Tips</p>
+        <p class="popup_text">It is recommended to use clear, high-contrast, and low-color images for conversion.</p>
+        <p class="popup_text">After pasting the code, if the image is abnormal, pull the FontSize, Width, and Height properties to the maximum, and then shrink them to the appropriate size.</p>`,
     },
     error: {
         text1: 'Drood',

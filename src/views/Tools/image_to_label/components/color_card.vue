@@ -83,24 +83,7 @@ const buttonManualCopy = () => {
 
 // 点击使用方法按钮
 const buttonHelp = () => {
-    const content = `
-        <p class="popup_title">1. 粘贴代码</p>
-        <p class="popup_text">把复制的代码粘贴到 Lable 零件的输入框中。</p>
-
-        <p class="popup_title">2. 设置 Label 零件的属性</p>
-        <p class="popup_text">字体（Font）设置为 Future Earth。</p>
-        <p class="popup_text">水平锚点（Horizontal Anchor）设置为 Left。</p>
-        <p class="popup_text">垂直锚点（Vertical Anchor）设置为 Top。</p>
-        <p class="popup_text">梯度（Gradient）设置为 Vertical。</p>
-        
-        <p class="popup_title">3. 调整图像大小</p>
-        <p class="popup_text">在 TINKER PANEL 选项内通过 Part Scale（零件大小）调整图像的大小。</p>
-        
-        <p class="popup_title">小提示</p>
-        <p class="popup_text">推荐使用清晰、对比度高、颜色较少的图像进行转换。</p>
-        <p class="popup_text">粘贴代码后，如果图像异常，把 FontSize、Width、Height 属性都拉到最大，然后再缩小到合适的大小</p>
-    `
-    showPopup("使用方法", content)
+    showPopup(t('popup.howToUse_title'), t('popup.howToUse_content'))
 }
 
 </script>

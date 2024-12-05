@@ -42,13 +42,31 @@ export default {
             btn_help: '如何使用',    
         },
     },
+    footer: {
+        text1: '根据 MIT 许可证发布',
+        text2: '版权所有 © 2024-至今 琦琦',
+    },
     toast: {
         copy: '已复制代码',
         copy_err: '复制失败，请手动复制',
     },
-    footer: {
-        text1: '根据 MIT 许可证发布',
-        text2: '版权所有 © 2024-至今 琦琦',
+    popup: {
+        howToUse_title: '如何使用',
+        howToUse_content: `<p class="popup_title">1. 粘贴代码</p>
+        <p class="popup_text">把复制的代码粘贴到 Lable 零件的输入框中。</p>
+
+        <p class="popup_title">2. 设置 Label 零件的属性</p>
+        <p class="popup_text">字体（Font）设置为 Future Earth。</p>
+        <p class="popup_text">水平锚点（Horizontal Anchor）设置为 Left。</p>
+        <p class="popup_text">垂直锚点（Vertical Anchor）设置为 Top。</p>
+        <p class="popup_text">梯度（Gradient）设置为 Vertical。</p>
+        
+        <p class="popup_title">3. 调整图像大小</p>
+        <p class="popup_text">在 TINKER PANEL 选项内通过 Part Scale（零件大小）调整图像的大小。</p>
+        
+        <p class="popup_title">小提示</p>
+        <p class="popup_text">推荐使用清晰、对比度高、颜色较少的图像进行转换。</p>
+        <p class="popup_text">粘贴代码后，如果图像异常，把 FontSize、Width、Height 属性都拉到最大，然后再缩小到合适的大小</p>`,
     },
     error: {
         text1: '小蓝',
