@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
-// 引入网站配置
-import conf from '/src/App.config'
-
 // 引入 NProgress 加载进度条
 import NProgress from 'nprogress'
 NProgress.configure({
@@ -29,7 +26,7 @@ const routes = [
         name: 'home',
         component: () => import("@/views/Home/Home.vue"),
         meta: {
-            title: conf.web.title,
+            title: "JNO - 工具集",
         },
     },
     {

@@ -4,8 +4,8 @@
 
 <template>
     <div class="footer flex-y-x">
-        <p>根据 MIT 许可证发布</p>
-        <p>版权所有 © 2024-至今 琦琦</p>
+        <p>{{ $t('footer.text1') }}</p>
+        <p>{{ $t('footer.text2') }}</p>
     </div>
 </template>
 

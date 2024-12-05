@@ -13,6 +13,8 @@ const labelStore = useLabelDataStore()
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 
 // 初始化颜色列表
@@ -66,9 +68,9 @@ const buttonCopyCode = () => {
     // 复制代码到剪切板中
     if (navigator.clipboard) {
         navigator.clipboard.writeText(labelStore.resultCode)
-        showToast("已复制代码")
+        showToast(t('toast.copy'))
     } else {
-        showToast("复制失败，请手动复制")
+        showToast(t('toast.copy_err'))
     }
 }
 
@@ -106,7 +108,7 @@ const buttonHelp = () => {
 <template>
     <div class="main_card color_card">
 
-        <p class="card_title">颜色编辑</p>
+        <p class="card_title">{{ $t('imageToLabel.color_card.title_1') }}</p>
         <div class="color_box flex-y">
             <div class="color_list">
                 <div 
@@ -131,15 +133,15 @@ const buttonHelp = () => {
             </div>
 
             <div class="card_tips">
-                <p>这里的颜色顺序与游戏内一致，颜色不会保存在代码中，需要在游戏内对应位置修改颜色。</p>
+                <p>{{ $t('imageToLabel.color_card.set_tips') }}</p>
             </div>
         </div>
 
-        <p class="card_title">导出</p>
+        <p class="card_title">{{ $t('imageToLabel.color_card.title_2') }}</p>
         <div class="card_content export_buttons">
-            <buttonView type="primary" text="复制代码" @click="buttonCopyCode"/>
-            <buttonView type="default" text="手动复制" @click="buttonManualCopy"/>
-            <buttonView type="default" text="使用方法" @click="buttonHelp"/>
+            <buttonView type="primary" :text="$t('imageToLabel.color_card.btn_copy')" @click="buttonCopyCode"/>
+            <buttonView type="default" :text="$t('imageToLabel.color_card.btn_m_copy')" @click="buttonManualCopy"/>
+            <buttonView type="default" :text="$t('imageToLabel.color_card.btn_help')" @click="buttonHelp"/>
         </div>
         
 

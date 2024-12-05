@@ -1,4 +1,8 @@
 <script setup>
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
 import sliderView from '@/components/Slider.vue'
 import switchView from '@/components/Switch.vue'
 import selectView from '@/components/Select.vue'
@@ -8,6 +12,15 @@ const labelStore = useLabelDataStore()
 const emit = defineEmits(['change'])
 
 
+// 使用 i18n 翻译
+const transModeText = ref([
+    'imageToLabel.edit_card.set_transMode_off',
+    'imageToLabel.edit_card.set_transMode_auto',
+    'imageToLabel.edit_card.set_transMode_color',
+])
+const transModeList = computed(() => {
+    return transModeText.value.map(str => t(str))
+})
 
 
 // 选择图片事件
@@ -34,33 +47,33 @@ const handleItemChange = () => {
 <template>
     <div class="main_card edit_card">
 
-        <p class="card_title">原始图片</p>
+        <p class="card_title">{{ $t('imageToLabel.edit_card.title_1') }}</p>
         <label>
             <input type="file" accept="image/*" @change="handleInputChange">
             <div class="upload_image_box flex-x-y">
-                <p v-if="!labelStore.imageData">点击选择图片</p>
+                <p v-if="!labelStore.imageData">{{ $t('imageToLabel.edit_card.select_image') }}</p>
                 <img v-if="labelStore.imageData" :src="labelStore.imageData" alt="">
             </div>
         </label>
 
-        <p class="card_title">参数设置</p>
+        <p class="card_title">{{ $t('imageToLabel.edit_card.title_2') }}</p>
         <div class="card_content">
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">图像宽度</p>
+                    <p class="title">{{ $t('imageToLabel.edit_card.set_imageWidth') }}</p>
                     <p class="value">{{ labelStore.imageWidth }}</p>
                 </div>
                 <sliderView v-model="labelStore.imageWidth" @change="handleItemChange" :min="10" :max="400" :step="10"/>
             </div>
 
             <div class="card_tips">
-                <p>越宽越清晰，转换后的数据也越大。Label 零件有字符数量限制，推荐正方形图像宽度在200以内。</p>
+                <p>{{ $t('imageToLabel.edit_card.set_imageWidth_tips') }}</p>
             </div>
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">颜色数量</p>
+                    <p class="title">{{ $t('imageToLabel.edit_card.set_colorCount') }}</p>
                     <p class="value">{{ labelStore.colorNum }}</p>
                 </div>
                 <sliderView v-model="labelStore.colorNum" @change="handleItemChange" :min="1" :max="10"/>
@@ -68,22 +81,22 @@ const handleItemChange = () => {
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">透明精细度</p>
+                    <p class="title">{{ $t('imageToLabel.edit_card.set_transFineness') }}</p>
                     <p class="value">{{ labelStore.colorDetail }}</p>
                 </div>
                 <sliderView v-model="labelStore.colorDetail" @change="handleItemChange" :min="0" :max="200" :step="1"/>
             </div>
 
-            <div class="setting_item">
+            <div v-if="labelStore.imageColors.length !== 0" class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">透明模式</p>
-                    <selectView v-model="labelStore.transMode" @change="handleItemChange" :value-list="labelStore.transModeList"/>
+                    <p class="title">{{ $t('imageToLabel.edit_card.set_transMode') }}</p>
+                    <selectView v-model="labelStore.transMode" @change="handleItemChange" :value-list="transModeList"/>
                 </div>
             </div>
             
             <div v-if="labelStore.transMode == 2" class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">透明颜色</p>
+                    <p class="title">{{ $t('imageToLabel.edit_card.set_transColor') }}</p>
                     <selectView v-model="labelStore.transColor" @change="handleItemChange" :value-list="labelStore.imageColors" :is-color="true"/>
                 </div>
             </div>
@@ -96,7 +109,7 @@ const handleItemChange = () => {
 <style lang="scss" scoped>
 .edit_card {
     margin-right: 16px;
-    width: 260px;
+    width: 280px;
 }
 
 .upload_image_box {

@@ -9,10 +9,9 @@ import topbar from '@/components/Topbar.vue'
 <template>
     <div class="copyCode-page">
 
-        <topbar title="手动复制代码"></topbar>
+        <topbar :title="$t('topbar.manual_copy')"></topbar>
 
         <div class="container">
-            <!-- <p class="code">{{ labelStore.resultCode }}</p> -->
             <textarea v-model="labelStore.resultCode"></textarea>
         </div>
 
@@ -25,7 +24,7 @@ import topbar from '@/components/Topbar.vue'
     textarea {
         resize: none;
         width: 100%;
-        height: 500px;
+        height: 550px;
         padding: 10px 12px;
         border-radius: 10px;
         background-color: var(--color-bg-2);

@@ -20,22 +20,22 @@ import labelImage from '@/assets/card_image/image_label.png'
 <div class="home-page">
 
     <!-- 顶栏 -->
-    <QTopbar></QTopbar>
+    <QTopbar :title="$t('web.title')"></QTopbar>
     
     <!-- 内容 -->
     <div class="container">
         
         <div class="hello_content flex-y">
             <p class="text">Juno: New Origins</p>
-            <p class="title">简单好用的<span>小工具</span></p>
+            <p class="title">{{ $t("home.title") }}<span>{{ $t("home.title_name") }}</span></p>
         </div>
 
         <div class="card_list">
-            <itemCard link="/tool/imagetolabel" title="图片转 Label" name="琦琦" :image="labelImage"/>
-            <itemCard title="待制作" name="琦琦" image=""/>
-            <itemCard title="待制作" name="琦琦" image=""/>
-            <itemCard title="待制作" name="琦琦" image=""/>
-            <itemCard title="待制作" name="琦琦" image=""/>
+            <itemCard link="/tool/imagetolabel" :title="$t('tools.ImageToLabel')" name="琦琦" :image="labelImage"/>
+            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
         </div>
 
     </div>
