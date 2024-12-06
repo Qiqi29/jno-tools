@@ -15,7 +15,7 @@ const imageUrl = computed(() => {
 <template>
     <div class="main_card result_card">
 
-        <p class="card_title">{{ $t('imageToLabel.result_card.title_1') }}</p>
+        <p class="card_title">{{ $t('imageToLabel.result.title_1') }}</p>
         <div class="result_box flex-x-y">
             <img v-if="imageUrl" :src="imageUrl" alt="">            
         </div>

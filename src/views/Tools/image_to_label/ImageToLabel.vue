@@ -39,7 +39,7 @@ const handleStartConvert = () => {
     <div class="imagetolabel-page">
     
         <!-- 顶栏 -->
-        <topbar :title="$t('tools.ImageToLabel')"></topbar>
+        <topbar :title="$t('imageToLabel.title')"></topbar>
         
         <!-- 内容区域 -->
         <div class="container">

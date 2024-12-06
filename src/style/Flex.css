@@ -24,12 +24,12 @@
 	flex-direction: column;
 	align-items: center;
 }
-/* 垂直排列-居中 */
+/* 垂直排列-居中对齐 */
 .flex-y-x {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
 }
 /* 垂直排列-左对齐 */
 .flex-y-left {
@@ -43,13 +43,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-}
-/* 垂直排列-左右居中 */
-.flex-x-y-column {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 /* 垂直排列-上下对齐 */
 .flex-y-between {

@@ -8,34 +8,34 @@ export default {
         manual_copy: 'Copy the code manually',
     },
     home: {
-        title: 'Simple ',
-        title_name: 'Gadget',
+        title1: 'Simple ',
+        title2: 'Gadget',
     },
     tools: {
-        ImageToLabel: 'Image To Label',
         empty: 'To be made',
     },
     imageToLabel: {
-        edit_card: {
+        title: 'Image To Label',
+        edit: {
             title_1: 'Original image',
             select_image: 'Click to select picture',
             title_2: 'Parameter Setting',
-            set_imageWidth: 'Image width',
-            set_imageWidth_tips: 'The wider the clearer, the larger the converted data. Label parts have a limit on the number of characters, and the recommended square image width is within 200.',
-            set_colorCount: 'Number of colors',
-            set_transFineness: 'Transparency fineness',
-            set_transMode: 'Transparent mode',
-            set_transMode_off: 'Off',
-            set_transMode_auto: 'Auto',
-            set_transMode_color: 'Specify color',
-            set_transColor: 'Transparent color',
+            imgw: 'Image width',
+            imgw_tips: 'The wider the clearer, the larger the converted data. Label parts have a limit on the number of characters, and the recommended square image width is within 200.',
+            colorNum: 'Number of colors',
+            tranValue: 'Transparency intensity',
+            tranMode: 'Transparent mode',
+            tranMode_off: 'Off',
+            tranMode_auto: 'Auto',
+            tranMode_color: 'Specify color',
+            tranColor: 'Transparent color',
         },
-        result_card: {
+        result: {
             title_1: 'Convert Preview',
         },
-        color_card: {
+        color: {
             title_1: 'Color editing',
-            set_tips: 'The color order here is the same as in-game, and the colors will not be saved in the code. You need to modify the colors at the corresponding location in the game.',
+            color_tips: 'The color order here is the same as in-game, and the colors will not be saved in the code. You need to modify the colors at the corresponding location in the game.',
             title_2: 'Export',
             btn_copy: 'Copy code',
             btn_m_copy: 'Manual copy',

@@ -14,9 +14,9 @@ const emit = defineEmits(['change'])
 
 // 使用 i18n 翻译
 const transModeText = ref([
-    'imageToLabel.edit_card.set_transMode_off',
-    'imageToLabel.edit_card.set_transMode_auto',
-    'imageToLabel.edit_card.set_transMode_color',
+    'imageToLabel.edit.tranMode_off',
+    'imageToLabel.edit.tranMode_auto',
+    'imageToLabel.edit.tranMode_color',
 ])
 const transModeList = computed(() => {
     return transModeText.value.map(str => t(str))
@@ -47,33 +47,33 @@ const handleItemChange = () => {
 <template>
     <div class="main_card edit_card">
 
-        <p class="card_title">{{ $t('imageToLabel.edit_card.title_1') }}</p>
+        <p class="card_title">{{ $t('imageToLabel.edit.title_1') }}</p>
         <label>
             <input type="file" accept="image/*" @change="handleInputChange">
             <div class="upload_image_box flex-x-y">
-                <p v-if="!labelStore.imageData">{{ $t('imageToLabel.edit_card.select_image') }}</p>
+                <p v-if="!labelStore.imageData">{{ $t('imageToLabel.edit.select_image') }}</p>
                 <img v-if="labelStore.imageData" :src="labelStore.imageData" alt="">
             </div>
         </label>
 
-        <p class="card_title">{{ $t('imageToLabel.edit_card.title_2') }}</p>
+        <p class="card_title">{{ $t('imageToLabel.edit.title_2') }}</p>
         <div class="card_content">
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit_card.set_imageWidth') }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.imgw') }}</p>
                     <p class="value">{{ labelStore.imageWidth }}</p>
                 </div>
                 <sliderView v-model="labelStore.imageWidth" @change="handleItemChange" :min="10" :max="400" :step="10"/>
             </div>
 
             <div class="card_tips">
-                <p>{{ $t('imageToLabel.edit_card.set_imageWidth_tips') }}</p>
+                <p>{{ $t('imageToLabel.edit.imgw_tips') }}</p>
             </div>
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit_card.set_colorCount') }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.colorNum') }}</p>
                     <p class="value">{{ labelStore.colorNum }}</p>
                 </div>
                 <sliderView v-model="labelStore.colorNum" @change="handleItemChange" :min="1" :max="10"/>
@@ -81,7 +81,7 @@ const handleItemChange = () => {
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit_card.set_transFineness') }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.tranValue') }}</p>
                     <p class="value">{{ labelStore.colorDetail }}</p>
                 </div>
                 <sliderView v-model="labelStore.colorDetail" @change="handleItemChange" :min="0" :max="200" :step="1"/>
@@ -89,14 +89,14 @@ const handleItemChange = () => {
 
             <div v-if="labelStore.imageColors.length !== 0" class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit_card.set_transMode') }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.tranMode') }}</p>
                     <selectView v-model="labelStore.transMode" @change="handleItemChange" :value-list="transModeList"/>
                 </div>
             </div>
             
             <div v-if="labelStore.transMode == 2" class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit_card.set_transColor') }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.tranColor') }}</p>
                     <selectView v-model="labelStore.transColor" @change="handleItemChange" :value-list="labelStore.imageColors" :is-color="true"/>
                 </div>
             </div>

@@ -91,7 +91,7 @@ const buttonHelp = () => {
 <template>
     <div class="main_card color_card">
 
-        <p class="card_title">{{ $t('imageToLabel.color_card.title_1') }}</p>
+        <p class="card_title">{{ $t('imageToLabel.color.title_1') }}</p>
         <div class="color_box flex-y">
             <div class="color_list">
                 <div 
@@ -116,15 +116,15 @@ const buttonHelp = () => {
             </div>
 
             <div class="card_tips">
-                <p>{{ $t('imageToLabel.color_card.set_tips') }}</p>
+                <p>{{ $t('imageToLabel.color.color_tips') }}</p>
             </div>
         </div>
 
-        <p class="card_title">{{ $t('imageToLabel.color_card.title_2') }}</p>
+        <p class="card_title">{{ $t('imageToLabel.color.title_2') }}</p>
         <div class="card_content export_buttons">
-            <buttonView type="primary" :text="$t('imageToLabel.color_card.btn_copy')" @click="buttonCopyCode"/>
-            <buttonView type="default" :text="$t('imageToLabel.color_card.btn_m_copy')" @click="buttonManualCopy"/>
-            <buttonView type="default" :text="$t('imageToLabel.color_card.btn_help')" @click="buttonHelp"/>
+            <buttonView type="primary" :text="$t('imageToLabel.color.btn_copy')" @click="buttonCopyCode"/>
+            <buttonView type="default" :text="$t('imageToLabel.color.btn_m_copy')" @click="buttonManualCopy"/>
+            <buttonView type="default" :text="$t('imageToLabel.color.btn_help')" @click="buttonHelp"/>
         </div>
         
 

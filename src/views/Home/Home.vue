@@ -27,11 +27,11 @@ import labelImage from '@/assets/card_image/image_label.png'
         
         <div class="hello_content flex-y">
             <p class="text">Juno: New Origins</p>
-            <p class="title">{{ $t("home.title") }}<span>{{ $t("home.title_name") }}</span></p>
+            <p class="title">{{ $t("home.title1") }}<span>{{ $t("home.title2") }}</span></p>
         </div>
 
         <div class="card_list">
-            <itemCard link="/tool/imagetolabel" :title="$t('tools.ImageToLabel')" name="琦琦" :image="labelImage"/>
+            <itemCard link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="labelImage"/>
             <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
             <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
             <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>

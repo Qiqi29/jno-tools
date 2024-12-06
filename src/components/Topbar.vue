@@ -27,7 +27,7 @@ const changeLocale = (lang) => {
     <div class="topbar flex-x-between">
 
         <router-link to="/" class="logo flex-x">
-            <img class="icon" src="@/assets/logo.png" alt="">
+            <img class="icon" src="@/assets/JNO.png" alt="">
             <p class="title">{{ title }}</p>
         </router-link>
 
@@ -56,22 +56,27 @@ const changeLocale = (lang) => {
 .topbar {
     position: sticky; top: 0; left: 0;
     height: 60px;
-    padding: 0 10px;
+    padding: 0 30px;
     background: var(--color-bg);
     border-bottom: 3px solid var(--color-bg-2);
     z-index: 100;
 }
+@media (max-width: 800px) {
+    .topbar {
+        padding: 0 10px;
+    }
+}
 
 .logo {
-    padding: 6px 14px 6px 6px;
+    padding: 6px 12px 6px 8px;
     border-radius: 4px;
     transition: all 0.15s;
     &:hover {
         background: #F0EFFF1A;
     }
     .icon {
-        height: 30px;
-        width: 30px;
+        height: 28px;
+        width: 28px;
     }
     .title {
         margin-left: 14px;
