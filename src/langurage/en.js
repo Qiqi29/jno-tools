@@ -42,6 +42,9 @@ export default {
             btn_help: 'How to use',
         },
     },
+    imageToMFD: {
+        title: 'Image To MFD',
+    },
     footer: {
         text1: 'Released under the MIT License.',
         text2: 'Copyright © 2024-present 琦琦',

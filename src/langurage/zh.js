@@ -42,6 +42,9 @@ export default {
             btn_help: '如何使用',    
         },
     },
+    imageToMFD: {
+        title: '图片转 MFD',
+    },
     footer: {
         text1: '根据 MIT 许可证发布',
         text2: '版权所有 © 2024-至今 琦琦',

@@ -46,6 +46,14 @@ const routes = [
         },
     },
     {
+        path: '/tool/imagetomfd',
+        name: 'imagetomfd',
+        component: () => import("@/views/Tools/image_to_mfd/ImageToMFD.vue"),
+        meta: {
+            title: "图片转 MFD",
+        },
+    },
+    {
         path: '/:catchAll(.*)',
         component: () => import("@/views/Error/404.vue"),
         meta: {
