@@ -1,7 +1,7 @@
 // 英文语言包
 export default {
     web: {
-        title: 'JNO - Toolset',
+        title: 'JNO Toolset',
     },
     topbar: {
         jno: 'JNO Site',

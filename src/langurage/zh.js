@@ -1,7 +1,7 @@
 // 中文语言包
 export default {
     web: {
-        title: 'JNO - 工具集',
+        title: 'JNO 工具集',
     },
     topbar: {
         jno: 'JNO 官网',

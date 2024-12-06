@@ -249,9 +249,9 @@ function matchColor(color1, color2) {
 
 /*
 
-<mspace=0.2><line-height=0.2><size=0.65>
-<#040404><space=0.5>..<space=0.5><br>....<br>
-<#010101>..<space=1>..<br>....
+<mspace=0.2><line-height=0.2><size=0.65><br>
+<br><#0F0F0F>... ...<br>
+...<space=0.2>...<br>
 
 */
 
@@ -269,6 +269,7 @@ export function imageToCode() {
     
     let lastColor = null
     
+    // 遍历像素数据，转换为字符串
     for (let i = 0; i < data.length; i += 4) {
         const r = data[i]
         const g = data[i + 1]
@@ -301,8 +302,18 @@ export function imageToCode() {
             resultCode += ` `
         }
     }
-    // 返回最终代码，去除结尾的空格
-    return resultCode.trimEnd()
+
+    // 去除换行符前面的空格，去除结尾的空格
+    resultCode = resultCode.replace(/\s*<br>/g, '<br>').trimEnd()
+    resultCode = resultCode.trimEnd()
+    
+    // 处理剩余的空格，如果连续长度大于12个，替换为使用标签空格
+    resultCode = resultCode.replace(/\s{12,}/g, (match) => {
+        const spaceCount = match.length
+        return `<space=${(spaceCount * 0.2).toFixed(1)}>`
+    })
+
+    return resultCode
 }
 
 // 辅助函数：获取当前颜色对应的颜色ID

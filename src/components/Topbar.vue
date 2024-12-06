@@ -26,7 +26,7 @@ const changeLocale = (lang) => {
 <template>
     <div class="topbar flex-x-between">
 
-        <router-link to="/" class="logo flex-x">
+        <router-link to="/" class="logo_box flex-x">
             <img class="icon" src="@/assets/JNO.png" alt="">
             <p class="title">{{ title }}</p>
         </router-link>
@@ -67,7 +67,7 @@ const changeLocale = (lang) => {
     }
 }
 
-.logo {
+.logo_box {
     padding: 6px 12px 6px 8px;
     border-radius: 4px;
     transition: all 0.15s;

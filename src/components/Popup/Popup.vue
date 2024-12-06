@@ -71,7 +71,6 @@ const clickCloseButton = () => {
         }
         .close_button {
             position: absolute;right: 20px;
-            padding-top: 1px;
             width: 35px;
             height: 35px;
             border-radius: 4px;
