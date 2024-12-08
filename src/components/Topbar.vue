@@ -27,7 +27,7 @@ const changeLocale = (lang) => {
     <div class="topbar flex-x-between">
 
         <router-link to="/" class="logo_box flex-x">
-            <img class="icon" src="@/assets/JNO.png" alt="">
+            <img class="icon" src="@/assets/Logo.png" alt="">
             <p class="title">{{ title }}</p>
         </router-link>
 
