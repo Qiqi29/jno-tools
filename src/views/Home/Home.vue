@@ -19,36 +19,36 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
 </script>
 
 <template>
-<div class="home-page">
+    <div class="home-page">
 
-    <!-- 顶栏 -->
-    <QTopbar :title="$t('web.title')"></QTopbar>
-    
-    <!-- 内容 -->
-    <div class="container">
+        <!-- 顶栏 -->
+        <QTopbar :title="$t('web.title')"></QTopbar>
         
-        <div class="hello_content flex-y">
-            <p class="text">Juno: New Origins</p>
-            <p class="title">{{ $t("home.title1") }}<span>{{ $t("home.title2") }}</span></p>
+        <!-- 内容 -->
+        <div class="container">
+            
+            <div class="hello_content flex-y">
+                <p class="text">Juno: New Origins</p>
+                <p class="title">{{ $t("home.title1") }}<span>{{ $t("home.title2") }}</span></p>
+            </div>
+
+            <div class="card_list">
+                <itemCard link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="image_label"/>
+                <!-- <itemCard link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦 / 所罗门老狗" :image="image_mfd"/> -->
+                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+            </div>
+
+            <!-- 制作团队 -->
+            <teamCard></teamCard>
+
         </div>
 
-        <div class="card_list">
-            <itemCard link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="image_label"/>
-            <itemCard link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦 / 所罗门老狗" :image="image_mfd"/>
-            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
-            <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
-        </div>
-
-        <!-- 制作团队 -->
-        <teamCard></teamCard>
+        <!-- 页脚 -->
+        <QFooter></QFooter>
 
     </div>
-
-
-    <!-- 页脚 -->
-    <QFooter></QFooter>
-
-</div>
 </template>
 
 <style lang="scss" scoped>

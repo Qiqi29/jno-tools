@@ -306,10 +306,12 @@ export function imageToCode() {
     // 去除换行符前面的空格，去除结尾的空格
     resultCode = resultCode.replace(/\s*<br>/g, '<br>').trimEnd()
     
-    // 处理剩余的空格，如果连续长度大于12个，替换为使用标签空格
+    // // 处理剩余的空格，如果连续长度大于12个，替换为使用标签空格
     resultCode = resultCode.replace(/\s{12,}/g, (match) => {
         const spaceCount = match.length
-        return `<space=${(spaceCount * 0.2).toFixed(1)}>`
+        const value = (spaceCount * 0.2).toFixed(1)
+        // 去除数值结尾的(.0)
+        return `<space=${value.replace(/\.0$/, '')}>`
     })
 
     return resultCode

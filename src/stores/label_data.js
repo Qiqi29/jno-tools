@@ -10,7 +10,7 @@ export const useLabelDataStore = defineStore('label_date', {
 
             imageWidth: 80,         // 图像宽度
             colorNum: 3,            // 颜色数量
-            colorDetail: 100,       // 透明色精细度
+            colorDetail: 100,       // 透明区域强度
 
             transMode: 0,           // 透明模式
             transModeList: ['关闭', '自动', '指定颜色'],
