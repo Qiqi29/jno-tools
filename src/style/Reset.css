@@ -64,6 +64,21 @@ input[type="color"]::-webkit-color-swatch {
 
 
 
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-2);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-bg-4);
+}
+
+
 
 /* 更改 NProgress 进度条样式 */
 #nprogress {

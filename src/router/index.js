@@ -26,7 +26,7 @@ const routes = [
         name: 'home',
         component: () => import("@/views/Home/Home.vue"),
         meta: {
-            title: "JNO - 工具集",
+            title: "JNO 工具集",
         },
     },
     {
@@ -34,7 +34,7 @@ const routes = [
         name: 'imagetolabel',
         component: () => import("@/views/Tools/image_to_label/ImageToLabel.vue"),
         meta: {
-            title: "图片转 Label",
+            title: "JNO 工具 - 图片转 Label",
         },
     },
     {
@@ -50,7 +50,7 @@ const routes = [
         name: 'imagetomfd',
         component: () => import("@/views/Tools/image_to_mfd/ImageToMFD.vue"),
         meta: {
-            title: "图片转 MFD",
+            title: "JNO 工具 - 图片转 MFD",
         },
     },
     {
