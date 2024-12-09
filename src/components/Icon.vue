@@ -8,18 +8,37 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    color: {
+        type: String,
+        default: "currentColor",
+    }
 })
 
 </script>
 
 <template>
-    <svg class="icon" :width="size" :height="size">
-        <use :xlink:href="`#icon-${icon}`"></use>
-    </svg>
+    <span class="icon">
+        <i :style="{ color: color, fontSize:size }">
+            <svg><use :xlink:href="`#icon-${icon}`"></use></svg>
+        </i>
+    </span>
 </template>
 
 <style lang="scss" scoped>
 .icon {
-    fill: inherit;
+    display: inline-flex;
+    vertical-align: middle;
+    flex-shrink: 0;
+    i {
+        display: inline-flex;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        svg {
+            width: inherit;
+            height: inherit;
+            fill: inherit;
+        }
+    }
 }
 </style>

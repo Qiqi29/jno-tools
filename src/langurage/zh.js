@@ -10,6 +10,7 @@ export default {
     home: {
         title1: '简单好用的',
         title2: '小工具',
+        team_title: '航天员们',
     },
     tools: {
         empty: '待制作',

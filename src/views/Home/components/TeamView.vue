@@ -7,7 +7,7 @@ import memberCard from './memberCard.vue'
     <div class="team_card">
 
         <div class="main_title">
-            <p>航天员们</p>
+            <p>{{ $t('home.team_title') }}</p>
         </div>
 
         <div class="card_list">

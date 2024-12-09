@@ -89,7 +89,6 @@ const changeLocale = (lang) => {
         border-radius: 4px;
         color: var(--color-theme);
         font-weight: bold;
-        fill: var(--color-theme);
         transition: all 0.15s;
         cursor: pointer;
         &:hover {

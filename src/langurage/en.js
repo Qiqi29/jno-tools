@@ -10,6 +10,7 @@ export default {
     home: {
         title1: 'Simple ',
         title2: 'Gadget',
+        team_title: 'Astronauts',
     },
     tools: {
         empty: 'To be made',

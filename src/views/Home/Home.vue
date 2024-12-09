@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import QTopbar from '@/components/Topbar.vue'
 import QFooter from '@/components/Footer.vue'
 import itemCard from '@/components/ItemCard.vue'
-import teamCard from './components/Team.vue'
+import teamView from './components/TeamView.vue'
 
 // 引入本地图片
 import image_label from '@/assets/card_image/image_label.png' 
@@ -41,7 +41,7 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
             </div>
 
             <!-- 制作团队 -->
-            <teamCard></teamCard>
+            <teamView></teamView>
 
         </div>
 

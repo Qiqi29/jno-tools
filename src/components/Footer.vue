@@ -14,7 +14,7 @@ import iconView from './Icon.vue'
             </div>
             <div class="text flex-x">
                 <iconView icon="copyright"/>
-                <span>版权所有 2024 - 至今，由 Qiqi 用 ♥ 制作。</span>
+                <span>版权所有 2024 - 至今，由 Qiqi 用 ♡ 制作。</span>
             </div>
         </div>
         <div class="right_box">
@@ -40,7 +40,6 @@ import iconView from './Icon.vue'
 }
 .text {
     margin-top: 8px;
-    fill: var(--color-text-5);
     .icon {
         margin-right: 6px;
         margin-bottom: 1px;
