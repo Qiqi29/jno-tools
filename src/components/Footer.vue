@@ -10,11 +10,11 @@ import iconView from './Icon.vue'
             <p class="web_title">JNO Toolset</p>
             <div class="text flex-x">
                 <iconView icon="mit"/>
-                <span>本网站根据 <a href="https://opensource.org/license/MIT" target="_blank">MIT 许可证</a> 发布。</span>
+                <span>本网站根据 <a href="https://opensource.org/license/MIT" target="_blank">MIT 许可证</a> 发布</span>
             </div>
             <div class="text flex-x">
                 <iconView icon="copyright"/>
-                <span>版权所有 2024 - 至今，由 Qiqi 用 ♡ 制作。</span>
+                <span>版权所有 2024 - 至今，Qiqi</span>
             </div>
         </div>
         <div class="right_box">
@@ -33,6 +33,11 @@ import iconView from './Icon.vue'
     border-top: 3px solid var(--color-bg-2);
     color: var(--color-text-5);
     font-size: 13px;
+}
+@media (max-width: 500px) {
+    .footer {
+        padding: 0 20px;
+    }
 }
 .web_title {
     font-size: 16px;

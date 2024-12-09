@@ -56,17 +56,17 @@ const handleChange = (mode) => {
 <style lang="scss" scoped>
 .qi-select {
     width: 140px;
-    fill: #3D4955;
+    color: #3D4955;
     user-select: none;
     .button {
         width: 20px;
         height: 20px;
         &:hover {
             cursor: pointer;
-            fill: var(--color-theme);
+            color: var(--color-theme);
         }
         &:active {
-            fill: var(--color-theme-a);
+            color: var(--color-theme-a);
         }
     }
     .value_text {

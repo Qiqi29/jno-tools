@@ -48,7 +48,7 @@ const handleClick = (event) => {
     user-select: none;
     cursor: pointer;
     .icon {
-        fill: var(--color-text-3);
+        color: var(--color-text-3);
     }
 }
 

@@ -8,17 +8,13 @@ const props = defineProps({
         type: String,
         default: "",
     },
-    color: {
-        type: String,
-        default: "currentColor",
-    }
 })
 
 </script>
 
 <template>
     <span class="icon">
-        <i :style="{ color: color, fontSize:size }">
+        <i :style="{ fontSize:size }">
             <svg><use :xlink:href="`#icon-${icon}`"></use></svg>
         </i>
     </span>
