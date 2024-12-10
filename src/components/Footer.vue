@@ -1,11 +1,11 @@
 <script setup>
 import iconView from './Icon.vue'
 
-
 </script>
 
 <template>
     <div class="footer flex-x">
+
         <div class="left_box">
             <p class="web_title">JNO Toolset</p>
             <div class="text flex-x">
@@ -17,9 +17,11 @@ import iconView from './Icon.vue'
                 <span>版权所有 2024 - 至今，Qiqi</span>
             </div>
         </div>
+
         <div class="right_box">
 
         </div>
+
     </div>
 </template>
 
@@ -39,6 +41,7 @@ import iconView from './Icon.vue'
         padding: 0 20px;
     }
 }
+
 .web_title {
     font-size: 16px;
     color: var(--color-text-4);

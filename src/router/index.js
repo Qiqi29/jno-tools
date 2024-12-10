@@ -4,9 +4,9 @@ import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router
 import NProgress from 'nprogress'
 NProgress.configure({
     minimum: 0.1,       // 最小百分比
-    easeFn: 'ease',     // 动画函数
+    easing: 'ease',     // 动画函数
     speed: 500,         // 动画速度
-    trickleSpeed: 200,  // 自动递增的速度
+    trickleSpeed: 200,  // 自动递增速度
     showSpinner: false  // 加载指示器
 })
 
@@ -73,20 +73,14 @@ const router = createRouter({
 
 // 路由守卫，从一个路由跳转到另一个路由时触发
 router.beforeEach((to, from, next) => {
-    // 显示进度条
     NProgress.start()
-
-    // 根据路由变化设置浏览器标题
     document.title = to.meta.title || "JNO"
-
-    // 跳转路由
     next()
 })
 
 // 路由守卫，路由跳转完成时触发
 router.afterEach((to, from) => {
-    // 隐藏进度条
     NProgress.done()
 })
 
-export default router
+export default router;

@@ -44,7 +44,7 @@ const changeLocale = (lang) => {
                     </div>
                 </div>
             </div>
-            <a class="item flex-x-y" href="https://github.com/Qiqi29" target="_blank">
+            <a class="item flex-x-y" href="https://github.com/Qiqi29/jno-tools" target="_blank">
                 <iconView icon="github"/>
             </a>
         </div>

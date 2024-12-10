@@ -80,13 +80,14 @@ input[type="color"]::-webkit-color-swatch {
 
 
 
-/* 更改 NProgress 进度条样式 */
+/* 更改 NProgress 进度条的样式 */
 #nprogress {
     position: absolute;
     z-index: 1000;
 }
 #nprogress .bar {
     background: var(--color-theme);
+    height: 3px;
 }
 #nprogress .peg {
     box-shadow: 0 0 10px var(--color-theme), 0 0 5px var(--color-theme);

@@ -1,5 +1,5 @@
 <script setup>
-import memberCard from './memberCard.vue'
+import Member_card from './Member_card.vue'
 
 </script>
 
@@ -11,7 +11,14 @@ import memberCard from './memberCard.vue'
         </div>
 
         <div class="card_list">
-            <memberCard name="琦琦" introduce="我们的目标是星辰大海" avatar="https://avatars.githubusercontent.com/u/112358908?v=4"/>
+            <Member_card 
+                name="琦琦" 
+                introduce="我们的目标是星辰大海" 
+                jno="https://www.simplerockets.com/u/TheQiqi"
+                avatar="https://avatars.githubusercontent.com/u/112358908?v=4"
+                bilibili="https://space.bilibili.com/401652755"
+                github="https://github.com/Qiqi29"
+            />
         </div>
 
     </div>

@@ -1,4 +1,5 @@
 <script setup>
+import iconView from '@/components/Icon.vue'
 
 </script>
 
@@ -9,9 +10,9 @@
 
         <p class="text"><span>{{ $t('error.text1') }}</span>{{ $t('error.text2') }}🚀</p>
 
-        <router-link to="/" class="back_button flex-x-y">
-            <svg class="icon" width="2em" height="2em"><use xlink:href="#icon-boom"></use></svg>
-        </router-link>
+        <a href="/" class="back_button flex-x-y">
+            <iconView icon="boom" size="2.4em"/>
+        </a>
         
     </div>
 </template>
@@ -21,9 +22,9 @@
     padding-top: 60px;
     color: var(--color-text-2);
     .title {
+        color: var(--color-bg);
         font-size: 100px;
         font-weight: bold;
-        color: var(--color-bg);
         text-shadow: 
         0 2px 0 var(--color-theme),
         2px 0 0 var(--color-theme),
@@ -40,16 +41,14 @@
     }
     .back_button {
         margin-top: 40px;
-        width: 100px;
-        height: 40px;
-        border-radius: 4px;
+        width: 60px;
+        height: 50px;
+        border-radius: 6px;
         background: #FF9A31;
+        color: #FFFFFF;
         transition: all 0.15s;
         &:hover {
             background: #e78822;
-        }
-        .icon {
-            fill: #FFFFFF;
         }
     }
 }

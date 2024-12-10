@@ -40,7 +40,7 @@ export function resizeImage(image, imageWidth) {
  */
 export function imageToPixel(image) {
 
-    // 调整图像大小
+    // 先把图片缩放到指定大小
     const canvas = resizeImage(image, labelStore.imageWidth)
 
     // 读取像素数据
@@ -48,7 +48,7 @@ export function imageToPixel(image) {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
     const data = imageData.data
 
-    // 遍历图像数据，统计不同颜色的数量
+    // 遍历数据，统计不同颜色的数量
     const colorCounts = {}
     for (let i = 0; i < data.length; i += 4) {
         const red = data[i]
@@ -57,10 +57,8 @@ export function imageToPixel(image) {
         const alpha = data[i + 3]
         if (alpha === 0) continue
         
-        // 创建颜色字符串
         const color = `${red},${green},${blue}`
 
-        // 统计颜色出现次数
         if (colorCounts[color]) {
             colorCounts[color]++
         } else {
@@ -70,9 +68,10 @@ export function imageToPixel(image) {
 
     // 把统计结果转换为数组，并按照数量排序
     const sortedEntries = Object.entries(colorCounts).sort((a, b) => b[1] - a[1])
-    // 获取数量最多的颜色值
+    // 获取数量最多的几个颜色值
     const topColors = sortedEntries.slice(0, labelStore.colorNum).map(entry => entry[0])
     labelStore.imageColors = topColors
+    // 更新颜色列表
     setColorList(topColors)
 
     // 遍历所有像素进行颜色替换
@@ -83,7 +82,7 @@ export function imageToPixel(image) {
         const alpha = data[i + 3]
         if (alpha === 0) continue
 
-        // 创建颜色字符串，查找最接近的颜色
+        // 查找当前像素最接近的颜色
         const color = `${red},${green},${blue}`
         const closestColor = findClosestColor(color, topColors)
 

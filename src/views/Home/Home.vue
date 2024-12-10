@@ -4,7 +4,7 @@ import { ref } from 'vue'
 // 引入组件
 import QTopbar from '@/components/Topbar.vue'
 import QFooter from '@/components/Footer.vue'
-import itemCard from '@/components/ItemCard.vue'
+import Tool_card from '@/components/Tool_card.vue'
 import teamView from './components/TeamView.vue'
 
 // 引入本地图片
@@ -33,11 +33,11 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
             </div>
 
             <div class="card_list">
-                <itemCard link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="image_label"/>
-                <!-- <itemCard link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦 / 所罗门老狗" :image="image_mfd"/> -->
-                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
-                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
-                <itemCard :title="$t('tools.empty')" name="琦琦" image=""/>
+                <Tool_card link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="image_label"/>
+                <!-- <Tool_card link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦 / 所罗门老狗" :image="image_mfd"/> -->
+                <Tool_card :title="$t('tools.empty')" name="---" image=""/>
+                <Tool_card :title="$t('tools.empty')" name="---" image=""/>
+                <Tool_card :title="$t('tools.empty')" name="---" image=""/>
             </div>
 
             <!-- 制作团队 -->
@@ -74,6 +74,20 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
         }
     }
 }
+@media (max-width: 800px) {
+    .hello_content {
+        padding-top: 60px;
+        .text {
+            font-size: 18px;
+        }
+        .title {
+            font-size: 30px;
+            span {
+                border-bottom-width: 2px;
+            }
+        }
+    }
+}
 
 
 .card_list {
@@ -98,25 +112,4 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-
-
-
-
-
-
-
-
-@media (max-width: 800px) {
-    .hello_content {
-        padding-top: 50px;
-        .text {
-            font-size: 16px;
-        }
-        .title {
-            font-size: 30px;
-        }
-    }
-}
-
 </style>
