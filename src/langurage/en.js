@@ -28,6 +28,7 @@ export default {
             imgw: 'Image width',
             imgw_tips: 'The wider the clearer, the larger the converted data. Label parts have a limit on the number of characters, and the recommended square image width is within 200.',
             colorNum: 'Number of colors',
+            colorTh: 'Color threshold',
             tranValue: 'Transparency intensity',
             tranMode: 'Transparent mode',
             tranMode_off: 'Off',

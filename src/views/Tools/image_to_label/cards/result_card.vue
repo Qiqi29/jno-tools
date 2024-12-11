@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, defineExpose, onUpdated } from 'vue'
+import { ref, computed, onUpdated } from 'vue'
 import { useLabelDataStore } from '@/stores/label_data'
 const labelStore = useLabelDataStore()
 import { rgbToHex } from '@/utils/Tools'

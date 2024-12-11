@@ -52,7 +52,7 @@ const handleItemChange = () => {
                     <p class="title">{{ $t('imageToLabel.edit.imgw') }}</p>
                     <p class="value">{{ labelStore.imageWidth }}</p>
                 </div>
-                <sliderView v-model="labelStore.imageWidth" @change="handleItemChange" :min="10" :max="400" :step="10"/>
+                <sliderView v-model="labelStore.imageWidth" @touchup="handleItemChange" :min="10" :max="400" :step="10"/>
             </div>
 
             <div class="card_tips">
@@ -64,7 +64,15 @@ const handleItemChange = () => {
                     <p class="title">{{ $t('imageToLabel.edit.colorNum') }}</p>
                     <p class="value">{{ labelStore.colorNum }}</p>
                 </div>
-                <sliderView v-model="labelStore.colorNum" @change="handleItemChange" :min="1" :max="10"/>
+                <sliderView v-model="labelStore.colorNum" @touchup="handleItemChange" :min="1" :max="10"/>
+            </div>
+
+            <div class="setting_item">
+                <div class="content flex-x-between">
+                    <p class="title">{{ $t('imageToLabel.edit.colorTh') }}</p>
+                    <p class="value">{{ labelStore.colorThreshold }}</p>
+                </div>
+                <sliderView v-model="labelStore.colorThreshold" @touchup="handleItemChange" :min="10" :max="200" :step="1"/>
             </div>
 
             <div class="setting_item">
@@ -72,7 +80,7 @@ const handleItemChange = () => {
                     <p class="title">{{ $t('imageToLabel.edit.tranValue') }}</p>
                     <p class="value">{{ labelStore.colorDetail }}</p>
                 </div>
-                <sliderView v-model="labelStore.colorDetail" @change="handleItemChange" :min="0" :max="200" :step="1"/>
+                <sliderView v-model="labelStore.colorDetail" @touchup="handleItemChange" :min="0" :max="200" :step="1"/>
             </div>
 
             <div v-if="labelStore.imageColors.length !== 0" class="setting_item">

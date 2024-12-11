@@ -23,7 +23,7 @@ export const colorIdList = [
  */
 export function resizeImage(image, imageWidth) {
     const canvas = document.createElement('canvas')
-    const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })
     const targetHeight = (imageWidth / image.width) * image.height
     canvas.width = imageWidth
     canvas.height = targetHeight
@@ -50,7 +50,7 @@ export function imageToPixel(image) {
 
     // 遍历数据，统计不同颜色的数量
     const colorCounts = {}
-    for (let i = 0; i < data.length; i += 4) {
+    for (let i = 0; i < data.length; i += 16) {
         const red = data[i]
         const green = data[i + 1]
         const blue = data[i + 2]
@@ -66,8 +66,25 @@ export function imageToPixel(image) {
         }
     }
 
+    // 合并相近的颜色
+    const mergedColors = {}
+    Object.keys(colorCounts).forEach(color => {
+        let isMerged = false
+        Object.keys(mergedColors).forEach(mergedColor => {
+            if (colorDistance(parseColor(color), parseColor(mergedColor)) < labelStore.colorThreshold) {
+                mergedColors[mergedColor] += colorCounts[color]
+                isMerged = true
+                return
+            }
+        })
+        if (!isMerged) {
+            mergedColors[color] = colorCounts[color]
+        }
+    })
+
+
     // 把统计结果转换为数组，并按照数量排序
-    const sortedEntries = Object.entries(colorCounts).sort((a, b) => b[1] - a[1])
+    const sortedEntries = Object.entries(mergedColors).sort((a, b) => b[1] - a[1])
     // 获取数量最多的几个颜色值
     const topColors = sortedEntries.slice(0, labelStore.colorNum).map(entry => entry[0])
     labelStore.imageColors = topColors
@@ -111,7 +128,7 @@ export function imageToPixel(image) {
     const newCanvas = document.createElement('canvas')
     newCanvas.width = canvas.width
     newCanvas.height = canvas.height
-    const newCtx = newCanvas.getContext('2d')
+    const newCtx = newCanvas.getContext('2d', { willReadFrequently: true })
     newCtx.putImageData(imageData, 0, 0)
 
     // 返回最终结果
@@ -122,7 +139,7 @@ export function imageToPixel(image) {
 }
 
 
-// 辅助函数：从颜色列表中找到最接近的颜色
+// 辅助函数：从颜色ID列表中找到最接近的颜色
 function findClosestColor(targetColor, colorList) {
     let closestColor = null
     let minDistance = Infinity

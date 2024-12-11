@@ -52,7 +52,7 @@ import iconView from './Icon.vue'
         margin-right: 6px;
         margin-bottom: 1px;
     }
-    ::v-deep a {
+    :deep(a) {
         color: var(--color-text-5);
         text-decoration: underline;
         text-underline-offset: 2px;

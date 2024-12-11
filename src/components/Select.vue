@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, defineEmits, computed } from 'vue'
+import { ref, computed } from 'vue'
 import iconView from '@/components/Icon.vue'
 import { rgbToHex } from '@/utils/Tools'
 

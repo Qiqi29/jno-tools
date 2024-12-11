@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue'
+import { computed } from 'vue'
 import { mapRange } from '@/utils/Tools'
 
 // 组件属性
@@ -21,8 +21,12 @@ const props = defineProps({
         default: 1,
     },
 })
-// 组件事件
-const emit = defineEmits(['update:modelValue', 'change'])
+
+const emit = defineEmits([
+    'update:modelValue', 
+    'change',
+    'touchup',
+])
 
 
 // 滑条改变后调用
@@ -30,6 +34,11 @@ const handleInput = (event) => {
     const value = parseInt(event.target.value, 10)
     emit('update:modelValue', value)
     emit('change')
+}
+
+// 松开滑条后调用
+const handleTouchUp = (event) => {
+    emit('touchup')
 }
 
 // 计算滑条进度
@@ -46,8 +55,10 @@ const progress = computed(() => {
             :max="max"
             :step="step"
             :value="modelValue"
-            @input="handleInput"
             :style="`background-size: ${progress}% 100%`"
+            @input="handleInput"
+            @mouseup="handleTouchUp"
+            @touchend="handleTouchUp"
         />
     </div>
 </template>

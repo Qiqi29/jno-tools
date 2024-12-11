@@ -28,6 +28,7 @@ export default {
             imgw: '图像宽度',
             imgw_tips: '越宽越清晰，转换后的数据也越大。Label 零件有字符数量限制，推荐正方形图像宽度在200以内。',
             colorNum: '颜色数量',
+            colorTh: '取色阈值',
             tranValue: '透明区域强度',
             tranMode: '透明模式',
             tranMode_off: '关闭',
