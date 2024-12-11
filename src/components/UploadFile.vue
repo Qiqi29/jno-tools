@@ -67,17 +67,21 @@ function handleFiles(files) {
     <label @dragover="handleDragOver" @dragleave="handleDragLeave" @drop="handleDrop">
         <input type="file" :accept="accept" @change="handleInputChange">
         <div class="uploadFile flex-x-y" :class="{ 'draging': isDragging }">
+            
             <!-- 提示文本 -->
             <div v-if="!hasFile" class="tipsText flex-y">
                 <iconView icon="upload" size="2em"/>
                 <div class="text" v-html="text"></div>
             </div>
+
             <!-- 图片预览 -->
             <img v-if="hasFile && accept === 'image/*'" :src="imageData" alt="">
+            
             <!-- XML预览 -->
             <div v-if="hasFile && accept === '.xml'" class="xmlData">
                 <span>已选择xml文件</span>
             </div>
+
         </div>
     </label>
 </template>
@@ -108,6 +112,7 @@ function handleFiles(files) {
             margin-top: 5px;
             margin-bottom: 5px;
             text-align: center;
+            white-space: pre;
         }
     }
     img {

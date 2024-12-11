@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onBeforeUnmount } from 'vue'
 import { imageToPixel } from './function'
 import { useLabelDataStore } from '@/stores/label_data'
 const labelStore = useLabelDataStore()
@@ -7,14 +7,12 @@ const labelStore = useLabelDataStore()
 
 // 引入组件
 import topbar from '@/components/Topbar.vue'
-import editCard from './card/edit_card.vue'
-import resultCard from './card/result_card.vue'
-import colorCard from './card/color_card.vue'
+import editCard from './cards/edit_card.vue'
+import resultCard from './cards/result_card.vue'
+import colorCard from './cards/color_card.vue'
 
 // 绑定组件引用
 const result_card = ref(null)
-
-
 
 
 // 开始转换
@@ -32,27 +30,21 @@ const handleStartConvert = () => {
     }
 }
 
-
+// 退出页面时重置数据
+onBeforeUnmount(() => {
+    labelStore.reset()
+})
 </script>
 
 <template>
     <div class="imagetolabel-page">
     
-        <!-- 顶栏 -->
         <topbar :title="$t('imageToLabel.title')"></topbar>
         
-        <!-- 内容区域 -->
         <div class="container">
-
-            <!-- 编辑卡片 -->
             <editCard @change="handleStartConvert"/>
-
-            <!-- 预览卡片 -->
             <resultCard ref="result_card"/>
-
-            <!-- 颜色卡片 -->
             <colorCard />
-
         </div>
     
     </div>
@@ -65,8 +57,6 @@ const handleStartConvert = () => {
     padding: 16px;
     height: calc(100vh - 60px);
 }
-
-
 
 @media (max-width: 900px) {
     .container {

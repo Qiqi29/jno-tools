@@ -7,6 +7,10 @@ export default {
         jno: 'JNO 官网',
         manual_copy: '手动复制代码',
     },
+    footer: {
+        mit: '本网站根据 <a href="https://opensource.org/license/MIT" target="_blank">MIT 许可证</a> 发布',
+        copyright: '版权所有 2024 - 至今，琦琦',
+    },
     home: {
         title1: '简单好用的',
         title2: '小工具',
@@ -46,31 +50,27 @@ export default {
     imageToMFD: {
         title: '图片转 MFD',
     },
-    footer: {
-        text1: '根据 MIT 许可证发布',
-        text2: '版权所有 © 2024-至今 琦琦',
-    },
     toast: {
         copy: '已复制代码',
         copy_err: '复制失败，请手动复制',
     },
-    popup: {
-        howToUse_title: '如何使用',
-        howToUse_content: `<p class="popup_title">1. 粘贴代码</p>
-        <p class="popup_text">把复制的代码粘贴到 Lable 零件的输入框中。</p>
-
-        <p class="popup_title">2. 设置 Label 零件的属性</p>
-        <p class="popup_text">字体（Font）设置为 Future Earth。</p>
-        <p class="popup_text">水平锚点（Horizontal Anchor）设置为 Left。</p>
-        <p class="popup_text">垂直锚点（Vertical Anchor）设置为 Top。</p>
-        <p class="popup_text">梯度（Gradient）设置为 Vertical。</p>
-        
-        <p class="popup_title">3. 调整图像大小</p>
-        <p class="popup_text">在 TINKER PANEL 选项内通过 Part Scale（零件大小）调整图像的大小。</p>
-        
-        <p class="popup_title">小提示</p>
-        <p class="popup_text">推荐使用清晰、对比度高、颜色较少的图像进行转换。</p>
-        <p class="popup_text">粘贴代码后，如果图像异常，把 FontSize、Width、Height 属性都拉到最大，然后再缩小到合适的大小</p>`,
+    popup_howToUse: {
+        main_title: '如何使用',
+        title_1: '1. 粘贴代码',
+        text_1: '把复制的代码粘贴到 Lable 零件的输入框中。',
+        title_2: '2. 设置 Label 零件的属性',
+        text_2: '(字体) 设置为 Future Earth。',
+        text_3: '(水平锚点) 设置为 Left。',
+        text_4: '(垂直锚点) 设置为 Top。',
+        text_5: '(梯度) 设置为 Vertical。',
+        title_3: '3. 调整图像大小',
+        text_6: '在 TINKER PANEL 选项内通过 Part Scale（零件大小）调整图像的大小。',
+        title_4: '小提示',
+        text_7: '推荐使用清晰、对比度高、颜色较少的图像进行转换。',
+        text_8: '粘贴代码后，如果图像异常，把 FontSize、Width、Height 属性都拉到最大，然后再缩小到合适的大小',
+    },
+    popup_manualCopy: {
+        main_title: '手动复制',
     },
     error: {
         text1: '小蓝',

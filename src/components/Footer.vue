@@ -10,11 +10,11 @@ import iconView from './Icon.vue'
             <p class="web_title">JNO Toolset</p>
             <div class="text flex-x">
                 <iconView icon="mit"/>
-                <span>本网站根据 <a href="https://opensource.org/license/MIT" target="_blank">MIT 许可证</a> 发布</span>
+                <div v-html="$t('footer.mit')"></div>
             </div>
             <div class="text flex-x">
                 <iconView icon="copyright"/>
-                <span>版权所有 2024 - 至今，Qiqi</span>
+                <span>{{ $t('footer.copyright') }}</span>
             </div>
         </div>
 
@@ -52,7 +52,7 @@ import iconView from './Icon.vue'
         margin-right: 6px;
         margin-bottom: 1px;
     }
-    a {
+    ::v-deep a {
         color: var(--color-text-5);
         text-decoration: underline;
         text-underline-offset: 2px;

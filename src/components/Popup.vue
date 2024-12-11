@@ -1,39 +1,40 @@
 <script setup>
-import { ref, defineEmits } from 'vue'
-import { hidePopup } from './index'
+import { ref } from 'vue'
 
 const props = defineProps({
     title: {
         type: String,
         default: "弹窗标题",
     },
-    text: {
-        type: String,
-        default: "",
-    },
 })
 
-// const emit = defineEmits(['close'])
+const isShow = ref(false)
 
-const clickCloseButton = () => {
-    hidePopup()
+function show() {
+    isShow.value = true
 }
 
+function hide() {
+    isShow.value = false
+}
+
+defineExpose({
+    show,
+})
 </script>
 
 <template>
-    <div class="qi-popup-box">
+    <div class="popup-box" v-if="isShow">
         
         <div class="popup">
 
-            <!-- 顶部区域 -->
             <div class="top_box flex-x-y">
                 <p class="title">{{ title }}</p>
-                <div class="close_button flex-x-y" @click="clickCloseButton">X</div>
+                <div class="close_button flex-x-y" @click="hide">X</div>
             </div>
 
-            <!-- 内容区域 -->
-            <div class="content" v-if="text" v-html="text">
+            <div class="content">
+                <slot></slot>
             </div>
 
         </div>
@@ -42,7 +43,7 @@ const clickCloseButton = () => {
 </template>
 
 <style lang="scss" scoped>
-.qi-popup-box {
+.popup-box {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
@@ -53,7 +54,7 @@ const clickCloseButton = () => {
     .popup {
         position: fixed;
         top: 50%; left: 50%;
-        padding: 14px 24px;
+        padding: 14px 20px;
         transform: translate(-50%, -50%);
         width: calc(100% - 50px);
         max-width: 700px;
@@ -86,8 +87,8 @@ const clickCloseButton = () => {
         }
     }
 
-    .content {
-        padding: 0 0 15px 0;
-    }
+    // .content {
+    //     padding: 0 0 15px 0;
+    // }
 }
 </style>

@@ -7,6 +7,10 @@ export default {
         jno: 'JNO Site',
         manual_copy: 'Copy the code manually',
     },
+    footer: {
+        mit: 'Published under <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a>',
+        copyright: 'Copyright 2024 - Present, 琦琦',
+    },
     home: {
         title1: 'Simple ',
         title2: 'Gadget',
@@ -19,7 +23,7 @@ export default {
         title: 'Image To Label',
         edit: {
             title_1: 'Original image',
-            select_image: 'Click to select picture,<br>or drag and drop it here',
+            select_image: 'Click to select picture,\nor drag and drop it here',
             title_2: 'Parameter Setting',
             imgw: 'Image width',
             imgw_tips: 'The wider the clearer, the larger the converted data. Label parts have a limit on the number of characters, and the recommended square image width is within 200.',
@@ -46,31 +50,27 @@ export default {
     imageToMFD: {
         title: 'Image To MFD',
     },
-    footer: {
-        text1: 'Released under the MIT License.',
-        text2: 'Copyright © 2024-present 琦琦',
-    },
     toast: {
         copy: 'Code copied successfully',
         copy_err: 'Copy failed, please copy manually',
     },
-    popup: {
-        howToUse_title: 'How to use',
-        howToUse_content: `<p class="popup_title">1. Paste code</p>
-        <p class="popup_text">Paste the copied code into the text box of the Lable part.</p>
-
-        <p class="popup_title">2. Set the properties of the Label part</p>
-        <p class="popup_text">(Font) Set to Future Earth.</p>
-        <p class="popup_text">(Horizontal Anchor) Set to Left.</p>
-        <p class="popup_text">(Vertical Anchor) Set to Top.</p>
-        <p class="popup_text">(Gradient) Set to Vertical.</p>
-        
-        <p class="popup_title">3. Resize image</p>
-        <p class="popup_text">Resize the image by Part Scale in the TINKER PANEL option.</p>
-        
-        <p class="popup_title">Tips</p>
-        <p class="popup_text">It is recommended to use clear, high-contrast, and low-color images for conversion.</p>
-        <p class="popup_text">After pasting the code, if the image is abnormal, pull the FontSize, Width, and Height properties to the maximum, and then shrink them to the appropriate size.</p>`,
+    popup_howToUse: {
+        main_title: 'How to use',
+        title_1: '1. Paste code',
+        text_1: 'Paste the copied code into the text box of the Lable part.',
+        title_2: '2. Set the properties of the Label part',
+        text_2: '(Font) Set to Future Earth.',
+        text_3: '(Horizontal Anchor) Set to Left.',
+        text_4: '(Vertical Anchor) Set to Top.',
+        text_5: '(Gradient) Set to Vertical.',
+        title_3: '3. Resize image',
+        text_6: 'Resize the image by Part Scale in the TINKER PANEL option.',
+        title_4: 'Tips',
+        text_7: 'It is recommended to use clear, high-contrast, and low-color images for conversion.',
+        text_8: 'After pasting the code, if the image is abnormal, pull the FontSize, Width, and Height properties to the maximum, and then shrink them to the appropriate size.',
+    },
+    popup_manualCopy: {
+        main_title: 'Manual copy',
     },
     error: {
         text1: 'Drood',

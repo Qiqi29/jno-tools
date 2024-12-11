@@ -2,11 +2,6 @@
 import { onMounted, ref, computed } from 'vue'
 import { imageToCode } from '../function'
 
-import iconView from '@/components/Icon.vue'
-import buttonView from '@/components/Button.vue'
-import { showToast } from '@/components/Toast'
-import { showPopup, hidePopup } from '@/components/Popup'
-
 import { useLabelDataStore } from '@/stores/label_data'
 const labelStore = useLabelDataStore()
 
@@ -15,6 +10,16 @@ const router = useRouter()
 
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+
+import { showToast } from '@/components/Toast'
+import buttonView from '@/components/Button.vue'
+import popupView from '@/components/Popup.vue'
+
+const howToUsePopupRef = ref(null)
+import howToUseComponent from '../popup/howToUse.vue'
+const manualCopyPopupRef = ref(null)
+import manualCopyComponent from '../popup/manualCopy.vue'
+
 
 
 // 初始化颜色列表
@@ -78,12 +83,13 @@ const buttonCopyCode = () => {
 const buttonManualCopy = () => {
     labelStore.resultCode = imageToCode()
     if (!labelStore.resultCode) return
-    router.push('/tool/imagetolabel/copycode')
+    manualCopyPopupRef.value.show()
+    // router.push('/tool/imagetolabel/copycode')
 }
 
 // 点击使用方法按钮
 const buttonHelp = () => {
-    showPopup(t('popup.howToUse_title'), t('popup.howToUse_content'))
+    howToUsePopupRef.value.show()
 }
 
 </script>
@@ -126,8 +132,16 @@ const buttonHelp = () => {
             <buttonView type="default" :text="$t('imageToLabel.color.btn_m_copy')" @click="buttonManualCopy"/>
             <buttonView type="default" :text="$t('imageToLabel.color.btn_help')" @click="buttonHelp"/>
         </div>
-        
 
+        <!-- 如何使用弹窗 -->
+        <popupView ref="howToUsePopupRef" :title="$t('popup_howToUse.main_title')">
+            <howToUseComponent />
+        </popupView>
+        
+        <!-- 手动复制弹窗 -->
+        <popupView ref="manualCopyPopupRef" :title="$t('popup_manualCopy.main_title')">
+            <manualCopyComponent />
+        </popupView>
 
     </div>
 </template>

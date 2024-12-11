@@ -12,5 +12,6 @@ const savedLocale = localStorage.getItem('locale') || 'zh'
 export const i18n = createI18n({
     legacy: false,
     messages,
-    locale: savedLocale
+    locale: savedLocale,
+    warnHtmlMessage: false,
 })
