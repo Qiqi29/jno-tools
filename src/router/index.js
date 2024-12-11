@@ -38,14 +38,6 @@ const routes = [
         },
     },
     {
-        path: '/tool/imagetolabel/copycode',
-        name: 'copycode',
-        component: () => import("@/views/Tools/image_to_label/CopyCode.vue"),
-        meta: {
-            title: "手动复制代码",
-        },
-    },
-    {
         path: '/tool/imagetomfd',
         name: 'imagetomfd',
         component: () => import("@/views/Tools/image_to_mfd/ImageToMFD.vue"),
