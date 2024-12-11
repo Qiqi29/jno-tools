@@ -19,7 +19,7 @@ export default {
         title: '图片转 Label',
         edit: {
             title_1: '原始图片',
-            select_image: '点击选择图片',
+            select_image: '点击选择图片，或拖拽到此处',
             title_2: '参数设置',
             imgw: '图像宽度',
             imgw_tips: '越宽越清晰，转换后的数据也越大。Label 零件有字符数量限制，推荐正方形图像宽度在200以内。',

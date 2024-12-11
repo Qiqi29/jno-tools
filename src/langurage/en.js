@@ -19,7 +19,7 @@ export default {
         title: 'Image To Label',
         edit: {
             title_1: 'Original image',
-            select_image: 'Click to select picture',
+            select_image: 'Click to select picture,<br>or drag and drop it here',
             title_2: 'Parameter Setting',
             imgw: 'Image width',
             imgw_tips: 'The wider the clearer, the larger the converted data. Label parts have a limit on the number of characters, and the recommended square image width is within 200.',

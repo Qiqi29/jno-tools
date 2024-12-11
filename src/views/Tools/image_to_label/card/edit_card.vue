@@ -6,13 +6,14 @@ const { t } = useI18n()
 import sliderView from '@/components/Slider.vue'
 import switchView from '@/components/Switch.vue'
 import selectView from '@/components/Select.vue'
+import uploadFile from '@/components/UploadFile.vue'
 
 import { useLabelDataStore } from '@/stores/label_data'
 const labelStore = useLabelDataStore()
 const emit = defineEmits(['change'])
 
 
-// 使用 i18n 翻译
+// 使用 i18n 翻译文本
 const transModeText = ref([
     'imageToLabel.edit.tranMode_off',
     'imageToLabel.edit.tranMode_auto',
@@ -23,20 +24,13 @@ const transModeList = computed(() => {
 })
 
 
-// 选择图片事件
-function handleInputChange(event) {
-    const files = event.target.files
-    if (files.length > 0) {
-        const reader = new FileReader()
-        reader.readAsDataURL(files[0])
-        reader.onload = function(e) {
-            labelStore.imageData = e.target.result
-            emit('change')
-        }
-    }
+// 选择图片后调用
+function handleUploadImage(image) {
+    labelStore.imageData = image
+    emit('change')
 }
 
-
+// 选项改变时调用
 const handleItemChange = () => {
     emit('change')
 }
@@ -48,13 +42,7 @@ const handleItemChange = () => {
     <div class="main_card edit_card">
 
         <p class="card_title">{{ $t('imageToLabel.edit.title_1') }}</p>
-        <label>
-            <input type="file" accept="image/*" @change="handleInputChange">
-            <div class="upload_image_box flex-x-y">
-                <p v-if="!labelStore.imageData">{{ $t('imageToLabel.edit.select_image') }}</p>
-                <img v-if="labelStore.imageData" :src="labelStore.imageData" alt="">
-            </div>
-        </label>
+        <uploadFile accept="image/*" @change="handleUploadImage" :text="$t('imageToLabel.edit.select_image')"/>
 
         <p class="card_title">{{ $t('imageToLabel.edit.title_2') }}</p>
         <div class="card_content">
@@ -110,27 +98,6 @@ const handleItemChange = () => {
 .edit_card {
     margin-right: 16px;
     width: 280px;
-}
-
-.upload_image_box {
-    padding: 10px;
-    margin-bottom: 16px;
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    border: 2px dashed var(--color-border);
-    background: var(--color-bg);
-    color: var(--color-text-4);
-    transition: all 0.15s;
-    &:hover {
-        cursor: pointer;
-        border-color: var(--color-theme);
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 }
 
 .color_input {

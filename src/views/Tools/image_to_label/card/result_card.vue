@@ -10,6 +10,20 @@ const imageUrl = computed(() => {
     return labelStore.newImageData.toDataURL()
 })
 
+const handleClickImg = (event) => {
+    // let x = event.offsetX
+    // let y = event.offsetY
+
+    // const canvas = labelStore.newImageData
+    // const ctx = canvas.getContext('2d')
+    // const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    // const data = imgData.data
+    
+    // let index = (y * canvas.width + x) * 4
+
+    // console.log(rgbToHex([data[index], data[index + 1], data[index + 2]]))
+}
+
 </script>
 
 <template>
@@ -17,7 +31,7 @@ const imageUrl = computed(() => {
 
         <p class="card_title">{{ $t('imageToLabel.result.title_1') }}</p>
         <div class="result_box flex-x-y">
-            <img v-if="imageUrl" :src="imageUrl" alt="">            
+            <img v-if="imageUrl" :src="imageUrl" @click="handleClickImg" alt="">            
         </div>
 
     </div>
@@ -41,20 +55,6 @@ const imageUrl = computed(() => {
             object-fit: contain;
         }
     }
-    // .color_list {
-    //     width: 100%;
-    //     margin: 16px 10px 0 10px;
-    //     // height: 60px;
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     .color_item {
-    //         margin-right: 10px;
-    //         margin-bottom: 10px;
-    //         width: 32px;
-    //         height: 32px;
-    //         border-radius: 4px;
-    //     }
-    // }
 }
 
 @media (max-width: 900px) {
