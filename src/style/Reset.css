@@ -64,14 +64,16 @@ input[type="color"]::-webkit-color-swatch {
 
 
 
-/* 全局滚动条样式 */
+/* 滚动条样式 */
 ::-webkit-scrollbar {
     width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--color-bg);
+    background: transparent;
 }
 ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    cursor: pointer;
     background: var(--color-bg-2);
 }
 ::-webkit-scrollbar-thumb:hover {

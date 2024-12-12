@@ -27,6 +27,7 @@ defineExpose({
 <template>
     <transition name="fade-bg">
         <div class="popup-bg" v-show="isShow" @click="hide">
+            
             <transition name="fade-popup">
                 <div class="popup" v-show="isShow" @click.stop="">
                     <div class="top_box flex-x-y">
@@ -38,6 +39,7 @@ defineExpose({
                     </div>
                 </div>
             </transition>
+            
         </div>
     </transition>
 </template>
@@ -52,11 +54,10 @@ defineExpose({
     z-index: 1000;
 
     .popup {
-        position: fixed;
-        top: 50%; left: 50%;
-        padding: 14px 20px;
+        position: fixed; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
-        width: calc(100% - 50px);
+        padding: 14px 20px 16px 20px;
+        width: calc(100% - 40px);
         max-width: 700px;
         border-radius: 10px;
         background: var(--color-bg-2);
@@ -67,16 +68,16 @@ defineExpose({
         height: 40px;
         .title {
             color: var(--color-text-2);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
         .close_button {
-            position: absolute;right: 20px;
-            width: 35px;
-            height: 35px;
+            position: absolute; right: 20px;
+            width: 32px;
+            height: 32px;
             border-radius: 4px;
             background: var(--color-bg-4);
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: var(--color-text-3);
             user-select: none;
