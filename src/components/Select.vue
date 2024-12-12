@@ -37,8 +37,8 @@ const handleChange = (mode) => {
 <template>
     <div class="qi-select flex-x-between">
         
-        <div class="button" @click="handleChange(0)">
-            <iconView icon="left" size="1.5em"/>
+        <div class="button flex-x-y" @click="handleChange(0)">
+            <iconView icon="left" size="1.4em"/>
         </div>
 
         <div class="value_text">
@@ -46,8 +46,8 @@ const handleChange = (mode) => {
             <div v-else class="color" :style="{ backgroundColor: rgbToHex(valueList[modelValue]) }"></div>
         </div>
 
-        <div class="button" @click="handleChange(1)">
-            <iconView icon="right" size="1.5em"/>
+        <div class="button flex-x-y" @click="handleChange(1)">
+            <iconView icon="right" size="1.4em"/>
         </div>
 
     </div>
@@ -70,12 +70,10 @@ const handleChange = (mode) => {
         }
     }
     .value_text {
-        .text {
-            margin-top: 1px;
-        }
+        font-size: 13px;
         .color {
             width: 50px;
-            height: 18px;
+            height: 16px;
             border-radius: 2px;
         }
     }

@@ -5,7 +5,7 @@ const defaultState = {
     newImageData: null,     // 转换后的图像数据（Canvas类型）
     resultCode: null,       // 转换结果代码
 
-    imageWidth: 80,         // 图像宽度
+    imageWidth: 150,        // 图像宽度
     colorNum: 3,            // 颜色数量
     colorDetail: 100,       // 透明区域强度
     colorThreshold: 30,     // 取色阈值

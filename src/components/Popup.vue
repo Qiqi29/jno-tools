@@ -9,6 +9,7 @@ const props = defineProps({
 })
 
 const isShow = ref(false)
+const isShowPopup = ref(false)
 
 function show() {
     isShow.value = true
@@ -24,26 +25,25 @@ defineExpose({
 </script>
 
 <template>
-    <div class="popup-box" v-if="isShow">
-        
-        <div class="popup">
-
-            <div class="top_box flex-x-y">
-                <p class="title">{{ title }}</p>
-                <div class="close_button flex-x-y" @click="hide">X</div>
-            </div>
-
-            <div class="content">
-                <slot></slot>
-            </div>
-
+    <transition name="fade-bg">
+        <div class="popup-bg" v-show="isShow" @click="hide">
+            <transition name="fade-popup">
+                <div class="popup" v-show="isShow" @click.stop="">
+                    <div class="top_box flex-x-y">
+                        <p class="title">{{ title }}</p>
+                        <div class="close_button flex-x-y" @click="hide">X</div>
+                    </div>
+                    <div class="content">
+                        <slot></slot>
+                    </div>
+                </div>
+            </transition>
         </div>
-
-    </div>
+    </transition>
 </template>
 
 <style lang="scss" scoped>
-.popup-box {
+.popup-bg {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
@@ -86,9 +86,27 @@ defineExpose({
             }
         }
     }
+}
 
-    // .content {
-    //     padding: 0 0 15px 0;
-    // }
+.fade-bg-enter-active, 
+.fade-bg-leave-active {
+    transition: opacity 0.3s, transform 0.3s;
+}
+.fade-bg-enter-from, 
+.fade-bg-leave-to {
+    opacity: 0;
+}
+
+.fade-popup-enter-active, 
+.fade-popup-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+.fade-popup-enter-from, .fade-popup-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+}
+.fade-popup-enter-to, .fade-popup-leave-from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.0) !important;
 }
 </style>

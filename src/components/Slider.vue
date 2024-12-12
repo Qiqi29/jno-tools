@@ -65,7 +65,6 @@ const progress = computed(() => {
 
 <style lang="scss" scoped>
 .qi-slider {
-    margin-bottom: 6px;
     input {
         -webkit-appearance: none;
         appearance: none;
