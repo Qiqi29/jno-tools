@@ -68,23 +68,25 @@ export function imageToPixel(image) {
 
     // 合并相近的颜色
     const mergedColors = {}
-    Object.keys(colorCounts).forEach(color => {
-        let isMerged = false
-        Object.keys(mergedColors).forEach(mergedColor => {
-            if (colorDistance(parseColor(color), parseColor(mergedColor)) < labelStore.colorThreshold) {
-                mergedColors[mergedColor] += colorCounts[color]
-                isMerged = true
-                return
+    if (labelStore.colorAlgorithm) {
+        Object.keys(colorCounts).forEach(color => {
+            let isMerged = false
+            Object.keys(mergedColors).forEach(mergedColor => {
+                if (colorDistance(parseColor(color), parseColor(mergedColor)) < labelStore.colorIntensity) {
+                    mergedColors[mergedColor] += colorCounts[color]
+                    isMerged = true
+                    return
+                }
+            })
+            if (!isMerged) {
+                mergedColors[color] = colorCounts[color]
             }
         })
-        if (!isMerged) {
-            mergedColors[color] = colorCounts[color]
-        }
-    })
+    }
 
 
     // 把统计结果转换为数组，并按照数量排序
-    const sortedEntries = Object.entries(mergedColors).sort((a, b) => b[1] - a[1])
+    const sortedEntries = Object.entries(labelStore.colorAlgorithm ? mergedColors : colorCounts).sort((a, b) => b[1] - a[1])
     // 获取数量最多的几个颜色值
     const topColors = sortedEntries.slice(0, labelStore.colorNum).map(entry => entry[0])
     labelStore.imageColors = topColors

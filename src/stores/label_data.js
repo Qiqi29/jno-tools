@@ -8,7 +8,9 @@ const defaultState = {
     imageWidth: 150,        // 图像宽度
     colorNum: 3,            // 颜色数量
     colorDetail: 100,       // 透明区域强度
-    colorThreshold: 30,     // 取色阈值
+    
+    colorAlgorithm: false,  // 使用取色算法
+    colorIntensity: 30,     // 取色强度
 
     transMode: 0,           // 透明模式
     transModeList: ['关闭', '自动', '指定颜色'],

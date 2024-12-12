@@ -69,10 +69,17 @@ const handleItemChange = () => {
 
             <div class="setting_item">
                 <div class="content flex-x-between">
-                    <p class="title">{{ $t('imageToLabel.edit.colorTh') }}</p>
-                    <p class="value">{{ labelStore.colorThreshold }}</p>
+                    <p class="title">{{ $t('imageToLabel.edit.colorAl') }}</p>
+                    <switchView v-model="labelStore.colorAlgorithm" @change="handleItemChange"/>
                 </div>
-                <sliderView v-model="labelStore.colorThreshold" @touchup="handleItemChange" :min="10" :max="200" :step="1"/>
+            </div>
+
+            <div class="setting_item" v-if="labelStore.colorAlgorithm">
+                <div class="content flex-x-between">
+                    <p class="title">{{ $t('imageToLabel.edit.colorin') }}</p>
+                    <p class="value">{{ labelStore.colorIntensity }}</p>
+                </div>
+                <sliderView v-model="labelStore.colorIntensity" @touchup="handleItemChange" :min="10" :max="200" :step="1"/>
             </div>
 
             <div class="setting_item">

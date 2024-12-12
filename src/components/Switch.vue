@@ -1,18 +1,15 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-// 组件属性
 const props = defineProps({
     modelValue: {
         type: Boolean,
         required: true,
     }
 })
-// 组件事件
+
 const emit = defineEmits(['update:modelValue', 'change'])
 
-
-// 状态
 const isChecked = ref(props.modelValue)
 
 // 开关更改事件
@@ -46,6 +43,7 @@ const handleChange = (event) => {
     --switch-h: 20px;
     width: var(--switch-w);
     height: var(--switch-h);
+    user-select: none;
     .slider {
         width: var(--switch-w);
         height: var(--switch-h);
@@ -61,7 +59,7 @@ const handleChange = (event) => {
         width: 16px;
         height: 16px;
         background: #525761;
-        transition: all 0.1s;
+        transition: all 0.2s;
     }
     input {
        display: none;
