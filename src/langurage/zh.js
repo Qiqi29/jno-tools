@@ -52,6 +52,9 @@ export default {
     imageToMFD: {
         title: '图片转 MFD',
     },
+    cnDoc: {
+        title: 'Vizzy 中文文档',
+    },
     toast: {
         copy: '已复制代码',
         copy_err: '复制失败，请手动复制',

@@ -14,10 +14,17 @@ import Member_card from './Member_card.vue'
             <Member_card 
                 name="琦琦" 
                 introduce="我们的目标是星辰大海" 
+                avatar="https://img.picgo.net/2024/12/14/2921809d8ae9b27884.jpeg"
                 jno="https://www.simplerockets.com/u/TheQiqi"
-                avatar="https://avatars.githubusercontent.com/u/112358908?v=4"
                 bilibili="https://space.bilibili.com/401652755"
                 github="https://github.com/Qiqi29"
+            />
+
+            <Member_card 
+                name="所罗门老狗" 
+                introduce="屑狗" 
+                avatar="https://img.picgo.net/2024/12/14/YF-70043c16ae9f3f23fd2.png"
+                bilibili="https://space.bilibili.com/176089527"
             />
         </div>
 

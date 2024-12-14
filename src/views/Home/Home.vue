@@ -10,6 +10,7 @@ import teamView from './components/TeamView.vue'
 // 引入本地图片
 import image_label from '@/assets/card_image/image_label.png' 
 import image_mfd from '@/assets/card_image/image_mfd.png' 
+import image_vizzy from '@/assets/card_image/image_vizzy.png' 
 
 
 
@@ -34,8 +35,8 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
 
             <div class="card_list">
                 <Tool_card link="/tool/imagetolabel" :title="$t('imageToLabel.title')" name="琦琦" :image="image_label"/>
-                <!-- <Tool_card link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦 / 所罗门老狗" :image="image_mfd"/> -->
-                <Tool_card :title="$t('tools.empty')" name="---" image=""/>
+                <Tool_card link="https://www.yuque.com/yuqueyonghuslrsu6/kd8bhu" blank :title="$t('cnDoc.title')" name="琦琦 / 所罗门老狗" :image="image_vizzy"/>
+                <!-- <Tool_card link="/tool/imagetomfd" :title="$t('imageToMFD.title')" name="琦琦" :image="image_mfd"/> -->
                 <Tool_card :title="$t('tools.empty')" name="---" image=""/>
                 <Tool_card :title="$t('tools.empty')" name="---" image=""/>
             </div>

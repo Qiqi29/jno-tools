@@ -52,6 +52,9 @@ export default {
     imageToMFD: {
         title: 'Image To MFD',
     },
+    cnDoc: {
+        title: 'Vizzy Chinese document',
+    },
     toast: {
         copy: 'Code copied successfully',
         copy_err: 'Copy failed, please copy manually',

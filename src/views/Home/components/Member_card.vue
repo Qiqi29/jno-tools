@@ -2,15 +2,15 @@
 import iconView from '@/components/Icon.vue'
 
 const props = defineProps({
-    avatar: {
-        type: String,
-        default: "",
-    },
     name: {
         type: String,
         default: "你的名字",
     },
     introduce: {
+        type: String,
+        default: "",
+    },
+    avatar: {
         type: String,
         default: "",
     },
@@ -35,7 +35,7 @@ const props = defineProps({
 
 <template>
     <div class="member_card flex-y">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/112358908?v=4" alt="">
+        <img class="avatar" :src="avatar" alt="">
         <p class="name">{{ name }}</p>
         <p class="introduce">{{ introduce }}</p>
         <div class="social_links">

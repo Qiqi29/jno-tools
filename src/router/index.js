@@ -46,6 +46,14 @@ const routes = [
         },
     },
     {
+        path: '/tool/test',
+        name: 'test',
+        component: () => import("@/views/Tools/test/Test.vue"),
+        meta: {
+            title: "JNO 工具 - 测试",
+        },
+    },
+    {
         path: '/:catchAll(.*)',
         component: () => import("@/views/Error/404.vue"),
         meta: {

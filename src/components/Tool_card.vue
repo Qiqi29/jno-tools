@@ -1,8 +1,15 @@
 <script setup>
+import { useRouter } from "vue-router"
+const router = useRouter()
+
 const props = defineProps({
     link: {
         type: String,
         default: "/",
+    },
+    blank: {
+        type: Boolean,
+        default: false,
     },
     title: {
         type: String,
@@ -17,22 +24,28 @@ const props = defineProps({
         default: "",
     },
 })
+
+const openPage = () => {
+    if (props.blank) {
+        window.open(props.link)
+    } else {
+        router.push(props.link)
+    }
+}
 </script>
 
 <template>
-    <router-link :to="link">
-        <div class="tool_card">
-            <div class="tool_image">
-                <div class="image">
-                    <img :src="image" alt="">
-                </div>
-            </div>
-            <div class="content">
-                <p class="title">{{ title }}</p>
-                <p class="name">{{ name }}</p>
+    <div class="tool_card" @click="openPage">
+        <div class="tool_image">
+            <div class="image">
+                <img :src="image" alt="">
             </div>
         </div>
-    </router-link>
+        <div class="content">
+            <p class="title">{{ title }}</p>
+            <p class="name">{{ name }}</p>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -42,6 +55,7 @@ const props = defineProps({
     background: var(--color-bg-2);
     color: var(--color-text-1);
     transition: all 0.3s;
+    cursor: pointer;
     &:hover {
         transform: translateY(-6px);
     }
