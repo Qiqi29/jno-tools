@@ -52,6 +52,9 @@ export default {
     imageToMFD: {
         title: '图片转 MFD',
     },
+    carftEditor: {
+        title: '作品编辑器（测试）',
+    },
     cnDoc: {
         title: 'Vizzy 中文文档',
     },

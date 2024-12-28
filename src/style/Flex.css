@@ -16,6 +16,11 @@
 	align-items: center;
 	justify-content: space-between;
 }
+.flex-x-left {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
 
 
 /* 垂直排列-顶部对齐 */

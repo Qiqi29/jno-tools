@@ -10,7 +10,7 @@ import iconView from '@/components/Icon.vue'
 
         <p class="text"><span>{{ $t('error.text1') }}</span>{{ $t('error.text2') }}🚀</p>
 
-        <a href="/" class="back_button flex-x-y">
+        <a href="./" class="back_button flex-x-y">
             <iconView icon="boom" size="2.4em"/>
         </a>
         

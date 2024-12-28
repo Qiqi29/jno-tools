@@ -6,6 +6,9 @@
     .card_content {
         padding: 0 14px 14px 14px;
     }
+    .card_buttons {
+        margin-top: 20px;
+    }
     .card_title {
         padding: 0 10px;
         margin-bottom: 10px;
@@ -17,7 +20,7 @@
         background: var(--color-bg-3);
     }
     .card_tips {
-        margin-top: 5px;
+        margin-top: 6px;
         padding: 5px 8px;
         border-radius: 5px;
         background: var(--color-bg);

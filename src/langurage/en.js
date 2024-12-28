@@ -52,6 +52,9 @@ export default {
     imageToMFD: {
         title: 'Image To MFD',
     },
+    carftEditor: {
+        title: 'Carft Editor (Test)',
+    },
     cnDoc: {
         title: 'Vizzy Chinese document',
     },

@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import iconView from '@/components/Icon.vue'
 
+import xmlIcon from '@/assets/svg_icons/xml_icon.svg'
+
 const props = defineProps({
     text: {
         type: String,
@@ -16,10 +18,14 @@ const props = defineProps({
 const emit = defineEmits(['change'])
 
 
-let hasFile = ref(false)
-let isDragging = ref(false)
-let imageData = ref('')
-let xmlData = ref('')
+const hasFile = ref(false)
+const isDragging = ref(false)
+const imageData = ref('')
+const xmlData = ref({
+    name: '',
+    size: '',
+    data: '',
+})
 
 // 选择文件事件
 function handleInputChange(event) {
@@ -49,14 +55,23 @@ function handleFiles(files) {
         const reader = new FileReader()
         reader.readAsDataURL(files[0])
         reader.onload = function(e) {
-            if (props.accept === 'image/*') {
+
+            const fileExtension = files[0].name.split('.').pop().toLowerCase()
+            if (props.accept === '.xml' && fileExtension === 'xml') {
+                xmlData.value.name = files[0].name.split('.').slice(0, -1).join('.')
+                xmlData.value.size = files[0].size
+                xmlData.value.data = e.target.result
+                hasFile.value = true
+                emit('change', xmlData.value)
+            }
+
+            const hasImage = files[0].type.startsWith('image/')
+            if (props.accept === 'image/*' && hasImage) {
                 imageData.value = e.target.result
+                hasFile.value = true
+                emit('change', e.target.result)
             }
-            if (props.accept === '.xml') {
-                xmlData.value = e.target.result
-            }
-            hasFile.value = true
-            emit('change', e.target.result)
+
         }
     }
 }
@@ -78,8 +93,9 @@ function handleFiles(files) {
             <img v-if="hasFile && accept === 'image/*'" :src="imageData" alt="">
             
             <!-- XML预览 -->
-            <div v-if="hasFile && accept === '.xml'" class="xmlData">
-                <span>已选择xml文件</span>
+            <div v-if="hasFile && accept === '.xml'" class="xmlData flex-x">
+                <img class="xmlIcon" :src="xmlIcon" alt="">
+                <p class="xmlName">{{ xmlData.name }}.xml</p>
             </div>
 
         </div>
@@ -119,6 +135,17 @@ function handleFiles(files) {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .xmlData {
+        padding: 0 15px 0 5px;
+        .xmlIcon {
+            width: 36px;
+            height: 36px;
+        }
+        .xmlName {
+            margin: 4px 0 0 10px;
+        }
     }
 }
 </style>

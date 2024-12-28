@@ -38,6 +38,14 @@ const routes = [
         },
     },
     {
+        path: '/tool/carfteditor',
+        name: 'carfteditor',
+        component: () => import("@/views/Tools/carft_editor/carftEditor.vue"),
+        meta: {
+            title: "JNO 工具 - 作品编辑器",
+        },
+    },
+    {
         path: '/tool/imagetomfd',
         name: 'imagetomfd',
         component: () => import("@/views/Tools/image_to_mfd/ImageToMFD.vue"),
