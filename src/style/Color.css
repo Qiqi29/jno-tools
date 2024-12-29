@@ -3,14 +3,15 @@
     --color-theme: #00B7ED;
     --color-theme-h: #00A1F2;
     --color-theme-a: #006EA6;
-    --color-theme-alpha: #0086ed30;
+    --color-theme-alpha: #0086ed20;
     /* 背景色 */
     --color-bg: #121518;
+    --color-bg-a: #121518C0;
     --color-bg-2: #1C2226;
     --color-bg-3: #242b30;
     --color-bg-4: #2E353D;
     /* 文本颜色 */
-    --color-text-1: #FAFAFA;
+    --color-text-1: #FFFFFF;
     --color-text-2: #DEE0E5;
     --color-text-3: #7D8494;
     --color-text-4: #5b606b;
@@ -21,7 +22,9 @@
     /* 边框颜色 */
     --color-border: #343841;
     /* 鼠标滑过颜色 */
-    --color-hover: #3D4955;
+    --color-hover: #DFE4FB10;
+    /* 按钮滑过颜色 */
+    --color-button-h: #3D4955;
     /* 不同级别颜色 */
     --color-primary: #337aff;
     --color-success: #44c26a;

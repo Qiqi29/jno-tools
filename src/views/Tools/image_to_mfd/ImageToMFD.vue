@@ -1,7 +1,7 @@
 <script setup>
 
 // 引入组件
-import topbar from '@/components/Topbar.vue'
+import topbar from '@/layout/Topbar.vue'
 
 </script>
 

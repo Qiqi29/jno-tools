@@ -6,7 +6,7 @@ const labelStore = useLabelDataStore()
 
 
 // 引入组件
-import topbar from '@/components/Topbar.vue'
+import topbar from '@/layout/Topbar.vue'
 import editCard from './cards/edit_card.vue'
 import resultCard from './cards/result_card.vue'
 import colorCard from './cards/color_card.vue'

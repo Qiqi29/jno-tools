@@ -166,10 +166,10 @@ const buttonHelp = () => {
                 &:hover {
                     cursor: pointer;
                     box-shadow: 
-                    -13px -13px 0 -11.5px var(--color-hover),
-                    13px -13px 0 -11.5px var(--color-hover),
-                    -13px 13px 0 -11.5px var(--color-hover),
-                    13px 13px 0 -11.5px var(--color-hover);
+                    -13px -13px 0 -11.5px var(--color-button-h),
+                    13px -13px 0 -11.5px var(--color-button-h),
+                    -13px 13px 0 -11.5px var(--color-button-h),
+                    13px 13px 0 -11.5px var(--color-button-h);
                 }
                 &.active {
                     box-shadow: 

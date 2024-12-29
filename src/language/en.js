@@ -5,7 +5,7 @@ export default {
     },
     topbar: {
         jno: 'JNO Site',
-        manual_copy: 'Copy the code manually',
+        language: 'Language',
     },
     footer: {
         mit: 'Published under <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a>',

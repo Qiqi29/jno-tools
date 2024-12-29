@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 // 引入组件
-import QTopbar from '@/components/Topbar.vue'
+import QTopbar from '@/layout/Topbar.vue'
 import QFooter from '@/components/Footer.vue'
 import Tool_card from '@/components/Tool_card.vue'
 import teamView from './components/TeamView.vue'

@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from 'vue'
 import iconView from './Icon.vue'
 
 const props = defineProps({
@@ -42,7 +41,7 @@ const handleClick = (event) => {
     margin: 10px 0;
     width: 100%;
     height: 36px;
-    border-radius: 4px;
+    border-radius: 5px;
     text-shadow: 1px 1px 0 #00000060;
     transition: all 0.15s;
     user-select: none;
@@ -53,7 +52,7 @@ const handleClick = (event) => {
 }
 
 .qi-button__default {
-    color: var(--color-text-2);
+    color: var(--color-text-1);
     background: #2E353D;
     &:hover {
         background: #3D4955;

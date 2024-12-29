@@ -10,7 +10,7 @@ import '@/style/Style.scss'
 
 import router from './router'               // router 路由
 import { createPinia } from 'pinia'         // Pinia 状态管理库
-import { i18n } from './langurage/i18n'     // 多语言配置
+import { i18n } from './language/i18n'      // 多语言配置
 import 'virtual:svg-icons-register'         // SVG 图标注册器
 
 const app = createApp(App)

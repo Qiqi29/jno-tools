@@ -5,7 +5,7 @@ export default {
     },
     topbar: {
         jno: 'JNO 官网',
-        manual_copy: '手动复制代码',
+        language: '语言',
     },
     footer: {
         mit: '本网站根据 <a href="https://opensource.org/license/MIT" target="_blank">MIT 许可证</a> 发布',

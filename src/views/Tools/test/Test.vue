@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-import QTopbar from '@/components/Topbar.vue'
+import QTopbar from '@/layout/Topbar.vue'
 import buttonView from '@/components/Button.vue'
 
 const headleRequest = async () => {

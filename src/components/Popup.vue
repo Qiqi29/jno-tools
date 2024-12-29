@@ -83,7 +83,7 @@ defineExpose({
             user-select: none;
             cursor: pointer;
             &:hover {
-                background: var(--color-hover);
+                background: var(--color-button-h);
             }
         }
     }

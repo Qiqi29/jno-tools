@@ -53,7 +53,7 @@ const openPage = () => {
     width: 100%;
     border-radius: 12px;
     background: var(--color-bg-2);
-    color: var(--color-text-1);
+    color: var(--color-text-2);
     transition: all 0.3s;
     cursor: pointer;
     &:hover {

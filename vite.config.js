@@ -1,13 +1,21 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// 自动导入SVG的插件
+// 自动导入 SVG 图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { resolve } from "path"
+
+// 自动导入 Vue 函数
+import AutoImport from 'unplugin-auto-import/vite'
+
 
 export default defineConfig({
     plugins: [
         vue(),
+        AutoImport({
+            imports: ['vue', 'vue-router'],
+            resolvers: [],
+        }),
         createSvgIconsPlugin({
             iconDirs: [resolve(__dirname, 'src/assets/svg_icons')], 
             symbolId: 'icon-[dir]-[name]'

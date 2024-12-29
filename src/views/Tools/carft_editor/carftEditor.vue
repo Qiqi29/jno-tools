@@ -4,7 +4,7 @@ import { useCarftDataStore } from '@/stores/carft_data'
 const carftStore = useCarftDataStore()
 import { modifyCarftXml } from './functon'
 
-import topbar from '@/components/Topbar.vue'
+import topbar from '@/layout/Topbar.vue'
 import uploadFile from '@/components/UploadFile.vue'
 import iconView from '@/components/Icon.vue'
 import buttonView from '@/components/Button.vue'
@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
 
             <!-- 选项卡片 -->
             <div class="main_card tool_card">
-                <p class="card_title">选择工具</p>
+                <p class="card_title">工具</p>
                 <div class="tool_list">
 
                     <div class="tool_item flex-x" :class="{'active': activeTool == 0}" @click="activeTool = 0">
