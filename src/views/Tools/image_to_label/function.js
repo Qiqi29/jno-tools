@@ -39,7 +39,7 @@ export function resizeImage(image, imageWidth) {
  * @returns 
  */
 export function imageToPixel(image) {
-
+    console.time('imageToPixel')
     // 先把图片缩放到指定大小
     const canvas = resizeImage(image, labelStore.imageWidth)
 
@@ -65,26 +65,29 @@ export function imageToPixel(image) {
             colorCounts[color] = 1
         }
     }
+    
 
     // 合并相近的颜色
     const mergedColors = {}
     if (labelStore.colorAlgorithm) {
-        Object.keys(colorCounts).forEach(color => {
-            let isMerged = false
-            Object.keys(mergedColors).forEach(mergedColor => {
-                if (colorDistance(parseColor(color), parseColor(mergedColor)) < labelStore.colorIntensity) {
-                    mergedColors[mergedColor] += colorCounts[color]
-                    isMerged = true
-                    return
+        for (let color in colorCounts) {
+            if (colorCounts.hasOwnProperty(color)) {
+                let isMerged = false
+                for (let mergedColor in mergedColors) {
+                    if (colorDistance(parseColor(color), parseColor(mergedColor)) < labelStore.colorIntensity) {
+                        mergedColors[mergedColor] += colorCounts[color]
+                        isMerged = true
+                        break
+                    }
                 }
-            })
-            if (!isMerged) {
-                mergedColors[color] = colorCounts[color]
+                if (!isMerged) {
+                    mergedColors[color] = colorCounts[color]
+                }
             }
-        })
+        }
     }
 
-
+    
     // 把统计结果转换为数组，并按照数量排序
     const sortedEntries = Object.entries(labelStore.colorAlgorithm ? mergedColors : colorCounts).sort((a, b) => b[1] - a[1])
     // 获取数量最多的几个颜色值
@@ -133,6 +136,8 @@ export function imageToPixel(image) {
     const newCtx = newCanvas.getContext('2d', { willReadFrequently: true })
     newCtx.putImageData(imageData, 0, 0)
 
+    console.timeEnd('imageToPixel')
+
     // 返回最终结果
     return {
         newCanvas,
@@ -150,18 +155,17 @@ function findClosestColor(targetColor, colorList) {
     const targetColorRgb = parseColor(targetColor)
 
     // 遍历颜色列表的所有项
-    colorList.forEach((colorString) => {
+    for (let i = 0; i < colorList.length; i++) {
         // 把当前颜色字符串转换为数组
-        const colorRgb = parseColor(colorString)
+        const colorRgb = parseColor(colorList[i])
         // 计算目标颜色与当前颜色的距离
         const distance = colorDistance(targetColorRgb, colorRgb)
         // 如果当前距离小于最小距离，更新最接近的颜色
         if (distance < minDistance) {
             minDistance = distance
-            closestColor = colorString
+            closestColor = colorList[i]
         }
-    })
-
+    }
     return closestColor
 }
 

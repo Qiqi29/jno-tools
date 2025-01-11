@@ -12,8 +12,7 @@ export default {
         copyright: '版权所有 2024 - 至今，琦琦',
     },
     home: {
-        title1: '简单好用的',
-        title2: '小工具',
+        mainTitle: '简单好用的<span>小工具</span>',
         team_title: '航天员们',
     },
     tools: {

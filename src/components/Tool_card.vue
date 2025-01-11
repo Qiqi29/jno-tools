@@ -38,7 +38,7 @@ const openPage = () => {
     <div class="tool_card" @click="openPage">
         <div class="tool_image">
             <div class="image">
-                <img :src="image" alt="">
+                <img :src="image"  alt="">
             </div>
         </div>
         <div class="content">
@@ -66,7 +66,7 @@ const openPage = () => {
         .image {
             width: 100%;
             height: 100%;
-            background: var(--color-bg-3);
+            background: var(--color-bg);
             border-radius: 6px;
             overflow: hidden;
             img {

@@ -12,8 +12,7 @@ export default {
         copyright: 'Copyright 2024 - Present, 琦琦',
     },
     home: {
-        title1: 'Simple ',
-        title2: 'Gadget',
+        mainTitle: 'Simple <span>Gadget</span>',
         team_title: 'Astronauts',
     },
     tools: {

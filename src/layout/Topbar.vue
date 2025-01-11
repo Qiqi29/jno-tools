@@ -142,7 +142,7 @@ onBeforeUnmount(() => {
 .topbar {
     position: sticky; top: 0; left: 0;
     height: 60px;
-    padding: 0 12px;
+    padding: 0 24px;
     background-image: radial-gradient(var(--color-bg-a) 1px, var(--color-bg) 1px);
     background-size: 4px 4px;
     backdrop-filter: saturate(50%) blur(8px);
@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
     .title {
         margin-left: 14px;
         color: var(--color-text-2);
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
     }
 }
@@ -223,7 +223,7 @@ onBeforeUnmount(() => {
 .menuFade-enter-from,
 .menuFade-leave-to {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-6px);
 }
 
 
@@ -238,6 +238,9 @@ onBeforeUnmount(() => {
 
 
 @media (max-width: 800px) {
+    .topbar {
+        padding: 0 12px;
+    }
     .nav_list {
         display: none;
     }

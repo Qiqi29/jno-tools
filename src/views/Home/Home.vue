@@ -14,8 +14,6 @@ import image_mfd from '@/assets/card_image/image_mfd.png'
 import image_vizzy from '@/assets/card_image/image_vizzy.png' 
 
 
-
-
 </script>
 
 <template>
@@ -29,7 +27,7 @@ import image_vizzy from '@/assets/card_image/image_vizzy.png'
             
             <div class="hello_content flex-y">
                 <p class="text">Juno: New Origins</p>
-                <p class="title">{{ $t("home.title1") }}<span>{{ $t("home.title2") }}</span></p>
+                <p class="title" v-html="$t('home.mainTitle')"></p>
             </div>
 
             <div class="card_list">
@@ -53,6 +51,8 @@ import image_vizzy from '@/assets/card_image/image_vizzy.png'
 </template>
 
 <style lang="scss" scoped>
+
+
 .container {
     margin: 0 auto;
     max-width: 1200px;
@@ -69,7 +69,7 @@ import image_vizzy from '@/assets/card_image/image_vizzy.png'
         font-size: 50px;
         font-weight: bold;
         color: var(--color-text-2);
-        span {
+        :deep(span) {
             border-bottom: 3px solid var(--color-theme);    
             padding-bottom: 0px;
         }
