@@ -15,9 +15,12 @@
     line-height: 1.5;
     font-family: Inter, Avenir, system-ui, Helvetica, Arial, sans-serif;
   
+    /* 优化中文字体渲染效果 */
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {

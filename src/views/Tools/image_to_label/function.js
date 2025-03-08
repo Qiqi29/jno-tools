@@ -39,7 +39,6 @@ export function resizeImage(image, imageWidth) {
  * @returns 
  */
 export function imageToPixel(image) {
-    console.time('imageToPixel')
     // 先把图片缩放到指定大小
     const canvas = resizeImage(image, labelStore.imageWidth)
 
@@ -136,8 +135,6 @@ export function imageToPixel(image) {
     const newCtx = newCanvas.getContext('2d', { willReadFrequently: true })
     newCtx.putImageData(imageData, 0, 0)
 
-    console.timeEnd('imageToPixel')
-
     // 返回最终结果
     return {
         newCanvas,
@@ -189,7 +186,7 @@ function colorDistance(color1, color2) {
 function setColorList(imageColors) {
     // 所有颜色恢复默认
     for(let i = 0; i < 25; i++) {
-        labelStore.colorList[i].color = '#000000'
+        labelStore.colorList[i].color = '#000'
     }
     // 从第十五个开始，替换为获取的颜色
     for(let i = 0; i < 10; i++) {
@@ -197,6 +194,7 @@ function setColorList(imageColors) {
             labelStore.colorList[i + 15].color = rgbToHex(imageColors[i])
         }
     }
+    console.log(labelStore.colorList)
 }
 
 
